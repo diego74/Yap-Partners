@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/logo-web.png" type="image/png">
+    <title>YAP Partners | Lima - Perú</title>
+    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="imgs/logo-color.png" alt="YAP Partners Logo">
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-container" id="navContainer">
+            <ul class="nav-menu">
+                <li><a href="#nosotros" data-i18n="nav_nosotros">NOSOTROS</a></li>
+                <li><a href="#ejecutivo" data-i18n="nav_ejecutivo">EJECUTIVO</a></li>
+                <li><a href="#proyectos" data-i18n="nav_proyectos">PROYECTOS</a></li>
+            </ul>
+
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <div class="nav-actions">
+                <a href="#contacto" class="btn-contacto" data-i18n="nav_contacto">CONTÁCTANOS</a>
+            </div>
+        </div>
+
+        <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero-general">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="videos/video-inmobiliaria.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay">
+            <div class="hero-content reveal fade-up">
+                <div class="hero-logo-box">
+                    <img src="imgs/logo-color.png" alt="YAP Logo" class="hero-brand-logo">
+                </div>
+                <h1 class="hero-main-title" data-i18n="hero_title">Holding <i>Empresarial</i><br>Multisectorial</h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">PROYECTOS QUE AVANZAN, RESULTADOS QUE IMPACTAN</p>
+
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-hero-primary" data-i18n="hero_btn_meeting">AGENDA TU REUNIÓN</a>
+                    <a href="#proyectos" class="btn-hero-secondary" data-i18n="hero_btn_projects">VER PROYECTOS</a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== QUIÉNES SOMOS (CAROUSEL) ==================== -->
+    <section class="carousel-section" id="nosotros">
+        <div class="carousel-container reveal fade-up">
+            <div class="carousel-track" id="track">
+
+                <div class="carousel-slide">
+                    <p class="carousel-subtitle" data-i18n="about_subtitle">¿QUIÉNES SOMOS?</p>
+                    <h2 class="carousel-title" data-i18n="about_title_1">Somos un holding empresarial multisectorial
+                    </h2>
+                    <p class="carousel-content" data-i18n="about_content_1">
+                        Especializado en el <strong>desarrollo y gestión de proyectos estratégicos</strong> de alto
+                        impacto. Gracias a la integración de capacidades técnicas y financieras, ofrecemos soluciones
+                        integrales que <strong>garantizan eficiencia y resultados medibles</strong> en diversas
+                        industrias. Con base en el Perú y una visión de expansión internacional, consolidamos un modelo
+                        empresarial orientado a la generación de valor sostenible y crecimiento escalable.
+                    </p>
+
+                    <div class="carousel-mv-mobile">
+                        <h2 class="carousel-title" data-i18n="about_title_2"
+                            style="margin-top: 30px; margin-bottom: 20px;">Propuesta de valor</h2>
+                        <div class="mision-vision-grid">
+                            <div class="mision-vision-column">
+                                <div class="mv-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                        <path
+                                            d="M19 2H5c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h4v3H7v2h10v-2h-2v-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 13H5V4h14v11z" />
+                                        <path d="M7 13h2v-3H7v3zm4 0h2v-6h-2v6zm4 0h2v-9h-2v9z" />
+                                    </svg>
+                                </div>
+                                <div class="mv-header" data-i18n="about_mv_mision_title">MISIÓN</div>
+                                <p class="mv-text" data-i18n="about_mv_mision_text">
+                                    Transformar decisiones estratégicas en proyectos de alto impacto que generan valor
+                                    económico, social y ambiental, aplicando metodologías de vanguardia y excelencia
+                                    operativa que aseguran la confianza de nuestros clientes, inversionistas y aliados.
+                                </p>
+                            </div>
+                            <div class="mision-vision-column">
+                                <div class="mv-icon-box">
+                                    <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                        <path
+                                            d="M19 2H5c-1.1 0-2 .9-2 2v17h18V4c0-1.1-.9-2-2-2zm-8 16H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V6h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V6h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V6h2v2z" />
+                                    </svg>
+                                </div>
+                                <div class="mv-header" data-i18n="about_mv_vision_title">VISIÓN</div>
+                                <p class="mv-text" data-i18n="about_mv_vision_text">
+                                    Ser el holding empresarial líder, reconocido nacional e internacionalmente por su
+                                    excelencia, eficiencia e innovación, consolidando proyectos sostenibles que
+                                    fortalecen
+                                    el patrimonio de nuestros stakeholders al 2030.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide slide-mision-vision">
+                    <p class="carousel-subtitle" data-i18n="about_subtitle">¿QUIÉNES SOMOS?</p>
+                    <h2 class="carousel-title" data-i18n="about_title_2">Propuesta de valor</h2>
+                    <div class="mision-vision-grid">
+                        <div class="mision-vision-column">
+                            <div class="mv-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path
+                                        d="M19 2H5c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h4v3H7v2h10v-2h-2v-3h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 13H5V4h14v11z" />
+                                    <path d="M7 13h2v-3H7v3zm4 0h2v-6h-2v6zm4 0h2v-9h-2v9z" />
+                                </svg>
+                            </div>
+                            <div class="mv-header" data-i18n="about_mv_mision_title">MISIÓN</div>
+                            <p class="mv-text" data-i18n="about_mv_mision_text">
+                                Transformar decisiones estratégicas en proyectos de alto impacto que generan valor
+                                económico, social y ambiental, aplicando metodologías de vanguardia y excelencia
+                                operativa que aseguran la confianza de nuestros clientes, inversionistas y aliados.
+                            </p>
+                        </div>
+                        <div class="mision-vision-column">
+                            <div class="mv-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path
+                                        d="M19 2H5c-1.1 0-2 .9-2 2v17h18V4c0-1.1-.9-2-2-2zm-8 16H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V6h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V6h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V6h2v2z" />
+                                </svg>
+                            </div>
+                            <div class="mv-header" data-i18n="about_mv_vision_title">VISIÓN</div>
+                            <p class="mv-text" data-i18n="about_mv_vision_text">
+                                Ser el holding empresarial líder, reconocido nacional e internacionalmente por su
+                                excelencia, eficiencia e innovación, consolidando proyectos sostenibles que fortalecen
+                                el patrimonio de nuestros stakeholders al 2030.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide slide-ventajas">
+                    <p class="carousel-subtitle" data-i18n="about_subtitle">¿QUIÉNES SOMOS?</p>
+                    <h2 class="carousel-title" data-i18n="about_vent_title">Ventajas Competitivas</h2>
+                    <div class="compromiso-grid">
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path d="M4 20h16v-2H4v2zm2-4h12v-2H6v2zm0-4h12V8H6v4z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_vent_item1_title">Lean Construction</h3>
+                            <p data-i18n="about_vent_item1_desc">Reducción de desperdicios y optimización de plazos.</p>
+                        </div>
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path d="M4 5h16v3H4V5zm0 6h10v3H4v-3zm0 6h16v3H4v-3z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_vent_item2_title">Gestión Estratégica</h3>
+                            <p data-i18n="about_vent_item2_desc">Proyectos con KPIs y tableros de control.</p>
+                        </div>
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path d="M12 2l4 4-4 4-4-4 4-4zm0 6l4 4-4 4-4-4 4-4zm0 6l4 4-4 4-4-4 4-4z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_vent_item3_title">Innovación y Tecnología</h3>
+                            <p data-i18n="about_vent_item3_desc">Aplicada a la eficiencia operativa.</p>
+                        </div>
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path
+                                        d="M12 2L2 7l10 5 10-5-10-5zm0 8.1L4.2 7 12 4.4 19.8 7 12 10.1zM2 11l10 5 10-5v7H2v-7z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_vent_item4_title">Homologación MEGA</h3>
+                            <p data-i18n="about_vent_item4_desc">Estándar corporativo de excelencia.</p>
+                        </div>
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path d="M3 6h18v2H3V6zm0 4h12v2H3v-2zm0 4h18v2H3v-2z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_vent_item5_title">Alianza Estratégica</h3>
+                            <p data-i18n="about_vent_item5_desc">Con WSISS CAPITAL para financiamiento de proyectos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide slide-capacidad">
+                    <p class="carousel-subtitle" data-i18n="about_subtitle">¿QUIÉNES SOMOS?</p>
+                    <h2 class="carousel-title" data-i18n="about_cap_title">Capacidad técnica y operativa</h2>
+                    <div class="capacidad-grid">
+                        <div class="capacidad-item">
+                            <div class="capacidad-num">01</div>
+                            <div class="capacidad-content">
+                                <h3 data-i18n="about_cap_item1_title">Equipos Técnicos Especializados</h3>
+                                <p data-i18n="about_cap_item1_desc">Ingenieros, arquitectos y gestores de proyecto
+                                    certificados en cada especialidad.</p>
+                            </div>
+                        </div>
+                        <div class="capacidad-item">
+                            <div class="capacidad-num">03</div>
+                            <div class="capacidad-content">
+                                <h3 data-i18n="about_cap_item3_title">Planificación y Control de Calidad</h3>
+                                <p data-i18n="about_cap_item3_desc">Procesos estructurados con entregables verificables
+                                    y auditorías periódicas.</p>
+                            </div>
+                        </div>
+                        <div class="capacidad-item">
+                            <div class="capacidad-num">02</div>
+                            <div class="capacidad-content">
+                                <h3 data-i18n="about_cap_item2_title">Herramientas Digitales de Gestión</h3>
+                                <p data-i18n="about_cap_item2_desc">Plataformas BIM, dashboards de control y monitoreo
+                                    en tiempo real de obra.</p>
+                            </div>
+                        </div>
+                        <div class="capacidad-item">
+                            <div class="capacidad-num">04</div>
+                            <div class="capacidad-content">
+                                <h3 data-i18n="about_cap_item4_title">Metodología Lean Construction</h3>
+                                <p data-i18n="about_cap_item4_desc">Optimización de flujos de trabajo, reducción de
+                                    mermas y cumplimiento de plazos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-slide slide-compromiso">
+                    <p class="carousel-subtitle" data-i18n="about_subtitle">¿QUIÉNES SOMOS?</p>
+                    <h2 class="carousel-title" data-i18n="about_title_3">Compromiso con Calidad y Sostenibilidad</h2>
+                    <div class="compromiso-grid">
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10" fill="var(--color-gold)" />
+                                    <path d="M9 12l2 2 4-4" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round" fill="none" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_content_3_val1_title">Cumplimiento Normativo</h3>
+                            <p data-i18n="about_content_3_val1_desc">Operamos bajo los marcos legales y regulatorios
+                                vigentes.</p>
+                        </div>
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path d="M2 14c0-5.5 4.5-10 10-10s10 4.5 10 10H2z" />
+                                    <path d="M1 14h22v2H1z" rx="0.5" />
+                                    <path d="M11 2h2v4h-2z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_content_3_val2_title">Seguridad y Salud</h3>
+                            <p data-i18n="about_content_3_val2_desc">Protocolos SST integrados en cada proyecto y
+                                operación.</p>
+                        </div>
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path
+                                        d="M12.5 13.5c0-.6-.1-1.1-.3-1.6l1.3-.8c.3-.2.4-.6.2-.9l-1-1.7c-.2-.3-.5-.4-.9-.3l-1.4.6c-.5-.4-1-.7-1.6-.9V7c0-.4-.3-.7-.7-.7H6.5c-.4 0-.7.3-.7.7v1.5c-.6.2-1.1.5-1.6.9l-1.4-.6c-.3-.1-.7 0-.9.3l-1 1.7c-.2.3-.1.7.2.9l1.3.8c-.2.5-.3 1-.3 1.6s.1 1.1.3 1.6l-1.3.8c-.3.2-.4.6-.2.9l1 1.7c.2.3.5.4.9.3l1.4-.6c.5.4 1 .7 1.6.9V20c0 .4.3.7.7.7h2.1c.4 0 .7-.3.7-.7v-1.5c.6-.2 1.1-.5 1.6-.9l1.4.6c.3.1.7 0 .9-.3l1-1.7c.2-.3.1-.7-.2-.9l-1.3-.8c.2-.5.3-1 .3-1.6zm-6 2.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z" />
+                                    <path
+                                        d="M22.5 7.5c0-.4-.1-.8-.2-1.1l.9-.6c.2-.1.3-.4.1-.6l-.7-1.2c-.1-.2-.4-.3-.6-.2l-1 .4c-.3-.3-.7-.5-1.1-.6V2.5c0-.3-.2-.5-.5-.5h-1.4c-.3 0-.5.2-.5.5v1.1c-.4.1-.8.3-1.1.6l-1-.4c-.2-.1-.5 0-.6.2l-.7 1.2c-.1.2 0 .5.1.6l.9.6c-.1.3-.2.7-.2 1.1s.1.8.2 1.1l-.9.6c-.2.1-.3.4-.1.6l.7 1.2c.1.2.4.3.6.2l1-.4c.3.3.7.5 1.1.6v1.1c0 .3.2.5.5.5h1.4c.3 0 .5-.2.5-.5V10.2c.4-.1.8-.3 1.1-.6l1 .4c.2.1.5 0 .6-.2l.7-1.2c.1-.2 0-.5-.1-.6l-.9-.6c.1-.3.2-.7.2-1.1zm-4.2 1.8c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_content_3_val3_title">Eficiencia Operativa</h3>
+                            <p data-i18n="about_content_3_val3_desc">Lean Construction y optimización continua de
+                                procesos.</p>
+                        </div>
+                        <div class="compromiso-card">
+                            <div class="compromiso-icon-box">
+                                <svg viewBox="0 0 24 24" fill="var(--color-gold)">
+                                    <path
+                                        d="M19.04 4.96c-2.4-2.4-6.28-2.4-8.68 0l-7.3 7.3c-1.36 1.36-1.74 3.38-.97 5.12L1 23l5.62-1.09c1.74.77 3.76.39 5.12-.97l7.3-7.3c2.4-2.4 2.4-6.28 0-8.68zm-5.18 5.18l-5.6 5.6c-.39.39-1.02.39-1.41 0-.39-.39-.39-1.02 0-1.41l5.6-5.6c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41z" />
+                                </svg>
+                            </div>
+                            <h3 data-i18n="about_content_3_val4_title">Desarrollo Sostenible</h3>
+                            <p data-i18n="about_content_3_val4_desc">Proyectos que respetan y preservan el
+                                medioambiente.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+            <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- ==================== NUESTROS VALORES ==================== -->
+    <section class="values-section" id="valores">
+        <div class="values-container">
+            <div class="values-header reveal fade-up">
+                <p class="values-tagline" data-i18n="values_tagline">LO QUE HACEMOS</p>
+                <h2 class="values-title" data-i18n="values_title">Valores Corporativos</h2>
+                <p class="values-description" data-i18n="values_desc">
+                    Nuestros pilares fundamentales definen la excelencia y el compromiso que imprimimos en cada una de
+                    nuestras unidades de negocio.
+                </p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card reveal fade-up">
+                    <div class="value-card-header">
+                        <div class="value-card-icon-box"><img src="imgs/ajustes-de-engranajes.png" alt="Disciplina">
+                        </div>
+                        <span class="value-card-number">01</span>
+                    </div>
+                    <h3 class="value-card-title" data-i18n="val_1_title">Disciplina</h3>
+                    <p class="value-card-desc" data-i18n="val_1_desc">Ejecución rigurosa de cada proceso con métodos
+                        probados y enfoque en resultados.</p>
+                </div>
+                <div class="value-card reveal fade-up">
+                    <div class="value-card-header">
+                        <div class="value-card-icon-box"><img src="imgs/apreton-de-manos.png" alt="Lealtad"></div>
+                        <span class="value-card-number">02</span>
+                    </div>
+                    <h3 class="value-card-title" data-i18n="val_2_title">Lealtad</h3>
+                    <p class="value-card-desc" data-i18n="val_2_desc">Compromiso total con nuestros clientes, aliados y
+                        equipos en cada proyecto.</p>
+                </div>
+                <div class="value-card reveal fade-up">
+                    <div class="value-card-header">
+                        <div class="value-card-icon-box"><img src="imgs/lista-de-verificacion.png" alt="Honestidad">
+                        </div>
+                        <span class="value-card-number">03</span>
+                    </div>
+                    <h3 class="value-card-title" data-i18n="val_3_title">Honestidad</h3>
+                    <p class="value-card-desc" data-i18n="val_3_desc">Transparencia absoluta en cada operación propuesta
+                        y relación comercial.</p>
+                </div>
+                <div class="value-card reveal fade-up">
+                    <div class="value-card-header">
+                        <div class="value-card-icon-box"><img src="imgs/el-respeto.png" alt="Respeto"></div>
+                        <span class="value-card-number">04</span>
+                    </div>
+                    <h3 class="value-card-title" data-i18n="val_4_title">Respeto</h3>
+                    <p class="value-card-desc" data-i18n="val_4_desc">Valoramos a cada stakeholder y comunidad que forma
+                        parte de nuestros proyectos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MÓDULOS DE EMPRESAS ==================== -->
+    <section class="modules-section">
+        <div class="services-header reveal fade-up">
+            <p class="services-tagline" data-i18n="group_tagline">NUESTRO</p>
+            <h2 class="services-main-title" data-i18n="group_title">Grupo Empresarial</h2>
+            <p class="services-description" data-i18n="group_desc">Un portafolio de empresas que impulsan el desarrollo
+                y la innovación en
+                múltiples sectores estratégicos.</p>
+        </div>
+        <div class="modules-container reveal fade-up">
+            <div class="modules-track" id="modulesTrack">
+
+                <div class="module-card" style="background-image: url('imgs/motor-empresa.png');">
+                    <a href="motor.html">
+                        <div class="module-overlay">
+                            <div class="module-info">
+                                <p class="module-category">YAP MOTOR</p>
+                                <span class="module-plus">+</span>
+                            </div>
+                            <img src="imgs/motor-logo-1.png" alt="Logo Motor" class="module-logo">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="module-card" style="background-image: url('imgs/animal-empresa.png');">
+                    <a href="animal.html">
+                        <div class="module-overlay">
+                            <div class="module-info">
+                                <p class="module-category">YAP ANIMAL</p>
+                                <span class="module-plus">+</span>
+                            </div>
+                            <img src="imgs/animal-logo.png" alt="Logo Animal" class="module-logo">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="module-card" style="background-image: url('imgs/organik-empresa.png');">
+                    <a href="organik.html">
+                        <div class="module-overlay">
+                            <div class="module-info">
+                                <p class="module-category">YAP ORGANIK</p>
+                                <span class="module-plus">+</span>
+                            </div>
+                            <img src="imgs/organik-logo.png" alt="Logo Organik" class="module-logo">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="module-card" style="background-image: url('imgs/pacifik-empresa.png');">
+                    <a href="pacifik.html">
+                        <div class="module-overlay">
+                            <div class="module-info">
+                                <p class="module-category">YAP PACIFIK</p>
+                                <span class="module-plus">+</span>
+                            </div>
+                            <img src="imgs/pacifik-logo.png" alt="Logo Pacifik" class="module-logo">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="module-card" style="background-image: url('imgs/liquik-empresa.png');">
+                    <a href="liquik.html">
+                        <div class="module-overlay">
+                            <div class="module-info">
+                                <p class="module-category">YAP LIQUIK</p>
+                                <span class="module-plus">+</span>
+                            </div>
+                            <img src="imgs/liquik-logo.png" alt="Logo Liquik" class="module-logo">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LÍNEAS DE SERVICIO ==================== -->
+    <section class="services-module">
+        <div class="services-header reveal fade-up">
+            <p class="services-tagline" data-i18n="services_tagline">LO QUE HACEMOS</p>
+            <h2 class="services-main-title" data-i18n="services_title">Nuestras Líneas de Servicio</h2>
+            <p class="services-description" data-i18n="services_desc">Integrando capacidades técnicas y estratégicas
+                para ofrecer soluciones
+                integrales en cada sector.</p>
+        </div>
+
+        <div class="services-container">
+            <div class="service-card reveal fade-up">
+                <div class="service-icon">
+                    <img src="imgs/consultoria-tecnica.png" alt="Ingeniería">
+                </div>
+                <h3 class="service-title" data-i18n="service_1_title">Ingeniería y consultoría técnica</h3>
+                <p class="service-text" data-i18n="service_1_desc">Diseño y asesoría especializada con los más altos
+                    estándares de precisión
+                    técnica y eficiencia.</p>
+            </div>
+
+            <div class="service-card reveal fade-up">
+                <div class="service-icon">
+                    <img src="imgs/construcción-infraestructura.png" alt="Construcción">
+                </div>
+                <h3 class="service-title" data-i18n="service_2_title">Construcción e infraestructura</h3>
+                <p class="service-text" data-i18n="service_2_desc">Ejecución de obras civiles de gran envergadura
+                    enfocadas en la optimización de
+                    plazos y costos.</p>
+            </div>
+
+            <div class="service-card reveal fade-up">
+                <div class="service-icon">
+                    <img src="imgs/desarrollo-inmo.png" alt="Desarrollo">
+                </div>
+                <h3 class="service-title" data-i18n="service_3_title">Desarrollo inmobiliario</h3>
+                <p class="service-text" data-i18n="service_3_desc">Creación de activos inmobiliarios estratégicos que
+                    fortalecen el patrimonio de
+                    nuestros clientes.</p>
+            </div>
+
+            <div class="service-card reveal fade-up">
+                <div class="service-icon">
+                    <img src="imgs/mantenimiento.png" alt="Mantenimiento">
+                </div>
+                <h3 class="service-title" data-i18n="service_4_title">Mantenimiento corporativo</h3>
+                <p class="service-text" data-i18n="service_4_desc">Gestión preventiva y correctiva para asegurar la
+                    continuidad operativa de
+                    instalaciones empresariales.</p>
+            </div>
+
+            <div class="service-card reveal fade-up">
+                <div class="service-icon">
+                    <img src="imgs/casco.png" alt="Ejecución">
+                </div>
+                <h3 class="service-title" data-i18n="service_5_title">Ejecución de proyectos privados</h3>
+                <p class="service-text" data-i18n="service_5_desc">Desarrollo a medida de proyectos estratégicos bajo un
+                    modelo de rentabilidad
+                    sostenible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EQUIPO DIRECTIVO ==================== -->
+    <section class="directiva-section" id="ejecutivo">
+        <div class="container">
+
+            <div class="group-wrapper reveal fade-up">
+                <h3 class="section-subtitle" data-i18n="team_subtitle">EQUIPO</h3>
+                <h2 class="section-title" data-i18n="team_title_exec">Directiva</h2>
+                <div class="workers-row row-3">
+
+
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/yeimy-espino-final.png" class="worker-img"
+                                alt="Yeimy Espino"></div>
+                        <div class="worker-info-header">
+                            <h4>YEIMY ESPINO</h4>
+                            <p data-i18n="job_ceo">Arquitecta Fundadora CEO</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos">
+                                <img src="logos/HARVARD.png" alt="Harvard"> <img src="logos/PACIFICO.png"
+                                    alt="Pacífico"><img src="logos/UPC.png" alt="USIL"> <img src="logos/upao-nuevo.png"
+                                    alt="UPAO"> <img src="logos/mit-logo.png" alt="MIT"> <img src="logos/yale-logo.png"
+                                    alt="Yale">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/ingrid-espino-final.png" class="worker-img"
+                                alt="Ingrid Espino"></div>
+                        <div class="worker-info-header">
+                            <h4>INGRID ESPINO</h4>
+                            <p data-i18n="job_subgerencia">Sub Gerencia</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos">
+                                <img src="logos/PACIFICO.png" alt="Pacífico"> <img src="logos/USIL.png" alt="USIL"> <img
+                                    src="logos/ULADECH.webp" alt="ULADECH"> <img src="logos/ISIL.png" alt="ISIL">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/andre-briones-final.png" class="worker-img"
+                                alt="Piero Briones"></div>
+                        <div class="worker-info-header">
+                            <h4>PIERO BRIONES</h4>
+                            <p data-i18n="job_admin">Administración</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos">
+                                <img src="logos/UPC.png" alt="UPC"> <img src="logos/SIU.png" alt="SIU"> <img
+                                    src="logos/USIL.png" alt="USIL">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/piero-briones-final.png" class="worker-img"
+                                alt="Andre Briones"></div>
+                        <div class="worker-info-header">
+                            <h4>ANDRE BRIONES</h4>
+                            <p data-i18n="job_ops">Operaciones</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos">
+                                <img src="logos/UPC.png" alt="UPC"> <img src="logos/SIU.png" alt="SIU"> <img
+                                    src="logos/USIL.png" alt="USIL">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="group-wrapper reveal fade-up">
+                <h3 class="section-subtitle" data-i18n="team_subtitle">EQUIPO</h3>
+                <h2 class="section-title" data-i18n="team_title_main">Equipo Principal</h2>
+                <div class="workers-row row-4">
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/jose-luis-final.png" class="worker-img"
+                                alt="Piero Briones"></div>
+                        <div class="worker-info-header">
+                            <h4>JORGE LUIS REVILLA</h4>
+                            <p data-i18n="job_finance">Finanzas Corporativa</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos">
+                                <img src="logos/ULIMA.webp" alt="UPC">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/omar-moro.png" class="worker-img"
+                                alt="Omar Moromizato"></div>
+                        <div class="worker-info-header">
+                            <h4>OMAR MOROMIZATO</h4>
+                            <p data-i18n="job_tech">Gerencia de Tecnología</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos">
+                                <img src="logos/USIL.png" alt="USIL"> <img src="logos/ISIL.png" alt="ISIL">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/adrian-cano-final.png" class="worker-img"
+                                alt="Adrian Cano">
+                        </div>
+                        <div class="worker-info-header">
+                            <h4>ADRIAN CANO</h4>
+                            <p data-i18n="job_ops_tech">Gerencia de Operaciones Técnicas</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos"><img src="logos/ESAN.png" alt="ESAN"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="group-wrapper reveal fade-up">
+                <h3 class="section-subtitle" data-i18n="team_subtitle">EQUIPO</h3>
+                <h2 class="section-title" data-i18n="team_title_advisory">Directores Consultivos</h2>
+                <div class="workers-row row-3">
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/rene-balarezo-final.png" class="worker-img"
+                                alt="Rene Balarezo"></div>
+                        <div class="worker-info-header">
+                            <h4>RENE BALAREZO</h4>
+                            <p data-i18n="job_legal">Legal Corporativo</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos"><img src="logos/ULIMA.webp" alt="U Lima"> <img
+                                    src="logos/UPC.png" alt="UPC"></div>
+                        </div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/wilfredo-souza-final.png" class="worker-img"
+                                alt="Wilfredo De Souza"></div>
+                        <div class="worker-info-header">
+                            <h4>WILFREDO DE SOUZA</h4>
+                            <p data-i18n="job_business">Negocio Corporativo</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos"><img src="logos/UPC.webp" alt="UPC"> <img src="logos/ESAN.png"
+                                    alt="ESAN"> <img src="logos/ULIMA.webp" alt="U Lima"></div>
+                        </div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-image-box"><img src="imgs/jorge-carrillo-final.png" class="worker-img"
+                                alt="Jorge Carrillo"></div>
+                        <div class="worker-info-header">
+                            <h4>JORGE CARRILLO</h4>
+                            <p data-i18n="job_corp_admin">Administración Corporativa</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img src="imgs/logo-horizontal-color.png" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos"><img src="logos/PACIFICO.png" alt="Pacífico"> <img
+                                    src="logos/INCAE.png" alt="INCAE"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== SLIDER PROYECTOS (VERSIÓN MOBILE) ==================== -->
+    <div id="proyectos"></div>
+    <section class="proyectos-slider mod-mobile">
+        <div class="slider-wrapper reveal fade-up">
+            <div class="slider-viewport">
+                <div class="slider-track">
+                    <div class="slide slide-1">
+                        <div class="slide-text">
+                            <h2>RESIDENCIAL GOLF</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-2">
+                        <div class="slide-text">
+                            <h2>CASA BEYOND</h2>
+                            <p>LIMA - ASIA</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-3">
+                        <div class="slide-text">
+                            <h2>CASA AURA</h2>
+                            <p>CHICLAYO - PIMENTEL</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-4">
+                        <div class="slide-text">
+                            <h2>CASA VORA</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-5">
+                        <div class="slide-text">
+                            <h2>CASA ONIX</h2>
+                            <p>ICA - PARACAS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay-controls">
+                <div class="info-card">
+                    <span class="tag" data-i18n="projects_tag">ALGUNOS PROYECTOS DE</span>
+                    <div class="slide-logo">
+                        <img src="imgs/log-horizontal.png" alt="YAP Logo">
+                    </div>
+                    <a href="#" class="link-more" data-i18n="projects_more">VER MÁS PROYECTOS →</a>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow-btn btn-prev">←</button>
+                    <button class="arrow-btn btn-next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDER PROYECTOS (MÓDULO 1 - DESKTOP) ==================== -->
+    <section class="proyectos-slider mod-1">
+        <div class="slider-wrapper reveal fade-up">
+            <div class="slider-viewport">
+                <div class="slider-track">
+                    <div class="slide slide-1">
+                        <div class="slide-text">
+                            <h2>RESIDENCIAL GOLF</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-2">
+                        <div class="slide-text">
+                            <h2>RESIDENCIAL GOLF</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-3">
+                        <div class="slide-text">
+                            <h2>RESIDENCIAL GOLF</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-4">
+                        <div class="slide-text">
+                            <h2>RESIDENCIAL GOLF</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-5">
+                        <div class="slide-text">
+                            <h2>RESIDENCIAL GOLF</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay-controls">
+                <div class="info-card">
+                    <span class="tag" data-i18n="projects_tag">ALGUNOS PROYECTOS DE</span>
+                    <div class="slide-logo">
+                        <img src="imgs/log-horizontal.png" alt="YAP Logo">
+                    </div>
+                    <a href="#" class="link-more" data-i18n="projects_more">VER MÁS PROYECTOS →</a>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow-btn btn-prev">←</button>
+                    <button class="arrow-btn btn-next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDER PROYECTOS (MÓDULO 2) ==================== -->
+    <section class="proyectos-slider mod-2">
+        <div class="slider-wrapper reveal fade-up">
+            <div class="slider-viewport">
+                <div class="slider-track">
+                    <div class="slide slide-1">
+                        <div class="slide-text">
+                            <h2>CASA BEYOND</h2>
+                            <p>LIMA - ASIA</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-2">
+                        <div class="slide-text">
+                            <h2>CASA BEYOND</h2>
+                            <p>LIMA - ASIA</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-3">
+                        <div class="slide-text">
+                            <h2>CASA BEYOND</h2>
+                            <p>LIMA - ASIA</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-4">
+                        <div class="slide-text">
+                            <h2>CASA BEYOND</h2>
+                            <p>LIMA - ASIA</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-5">
+                        <div class="slide-text">
+                            <h2>CASA BEYOND</h2>
+                            <p>LIMA - ASIA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay-controls">
+                <div class="info-card">
+                    <span class="tag" data-i18n="projects_tag">ALGUNOS PROYECTOS DE</span>
+                    <div class="slide-logo">
+                        <img src="imgs/log-horizontal.png" alt="YAP Logo">
+                    </div>
+                    <a href="#" class="link-more" data-i18n="projects_more">VER MÁS PROYECTOS →</a>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow-btn btn-prev">←</button>
+                    <button class="arrow-btn btn-next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDER PROYECTOS (MÓDULO 3) ==================== -->
+    <section class="proyectos-slider mod-3">
+        <div class="slider-wrapper reveal fade-up">
+            <div class="slider-viewport">
+                <div class="slider-track">
+                    <div class="slide slide-1">
+                        <div class="slide-text">
+                            <h2>CASA AURA</h2>
+                            <p>CHICLAYO - PIMENTEL</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-2">
+                        <div class="slide-text">
+                            <h2>CASA AURA</h2>
+                            <p>CHICLAYO - PIMENTEL</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-3">
+                        <div class="slide-text">
+                            <h2>CASA AURA</h2>
+                            <p>CHICLAYO - PIMENTEL</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-4">
+                        <div class="slide-text">
+                            <h2>CASA AURA</h2>
+                            <p>CHICLAYO - PIMENTEL</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-5">
+                        <div class="slide-text">
+                            <h2>CASA AURA</h2>
+                            <p>CHICLAYO - PIMENTEL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay-controls">
+                <div class="info-card">
+                    <span class="tag" data-i18n="projects_tag">ALGUNOS PROYECTOS DE</span>
+                    <div class="slide-logo">
+                        <img src="imgs/log-horizontal.png" alt="YAP Logo">
+                    </div>
+                    <a href="#" class="link-more" data-i18n="projects_more">VER MÁS PROYECTOS →</a>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow-btn btn-prev">←</button>
+                    <button class="arrow-btn btn-next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDER PROYECTOS (MÓDULO 4) ==================== -->
+    <section class="proyectos-slider mod-4">
+        <div class="slider-wrapper reveal fade-up">
+            <div class="slider-viewport">
+                <div class="slider-track">
+                    <div class="slide slide-1">
+                        <div class="slide-text">
+                            <h2>CASA VORA</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-2">
+                        <div class="slide-text">
+                            <h2>CASA VORA</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-3">
+                        <div class="slide-text">
+                            <h2>CASA VORA</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-4">
+                        <div class="slide-text">
+                            <h2>CASA VORA</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-5">
+                        <div class="slide-text">
+                            <h2>CASA VORA</h2>
+                            <p>NUEVO CHIMBOTE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay-controls">
+                <div class="info-card">
+                    <span class="tag" data-i18n="projects_tag">ALGUNOS PROYECTOS DE</span>
+                    <div class="slide-logo">
+                        <img src="imgs/log-horizontal.png" alt="YAP Logo">
+                    </div>
+                    <a href="#" class="link-more" data-i18n="projects_more">VER MÁS PROYECTOS →</a>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow-btn btn-prev">←</button>
+                    <button class="arrow-btn btn-next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SLIDER PROYECTOS (MÓDULO 5) ==================== -->
+    <section class="proyectos-slider mod-5">
+        <div class="slider-wrapper reveal fade-up">
+            <div class="slider-viewport">
+                <div class="slider-track">
+                    <div class="slide slide-1">
+                        <div class="slide-text">
+                            <h2>CASA ONIX</h2>
+                            <p>ICA - PARACAS</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-2">
+                        <div class="slide-text">
+                            <h2>CASA ONIX</h2>
+                            <p>ICA - PARACAS</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-3">
+                        <div class="slide-text">
+                            <h2>CASA ONIX</h2>
+                            <p>ICA - PARACAS</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-4">
+                        <div class="slide-text">
+                            <h2>CASA ONIX</h2>
+                            <p>ICA - PARACAS</p>
+                        </div>
+                    </div>
+                    <div class="slide slide-5">
+                        <div class="slide-text">
+                            <h2>CASA ONIX</h2>
+                            <p>ICA - PARACAS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay-controls">
+                <div class="info-card">
+                    <span class="tag" data-i18n="projects_tag">ALGUNOS PROYECTOS DE</span>
+                    <div class="slide-logo">
+                        <img src="imgs/log-horizontal.png" alt="YAP Logo">
+                    </div>
+                    <a href="#" class="link-more" data-i18n="projects_more">VER MÁS PROYECTOS →</a>
+                </div>
+                <div class="nav-arrows">
+                    <button class="arrow-btn btn-prev">←</button>
+                    <button class="arrow-btn btn-next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACTO ==================== -->
+    <section class="contact-section" id="contacto">
+        <div class="contact-container">
+            <div class="contact-info reveal fade-right">
+                <div class="top-line">
+                    <span class="gold-line"></span>
+                </div>
+                <h1 class="contact-title" data-i18n="contact_title">Contáctanos</h1>
+                <p class="contact-description" data-i18n="contact_desc">
+                    Ingresa tus datos para realizar alguna consulta de nosotros o de algunos de nuestros proyectos.
+                </p>
+
+                <div class="info-details">
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong data-i18n="office_label">OFICINA PRINCIPAL</strong>
+                            <p data-i18n="office_address">Av. República de Colombia 791 Of. 701 <br> San Isidro, Lima,
+                                Perú</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <strong data-i18n="email_label">CORREO ELECTRÓNICO</strong>
+                            <p>contacto@yapcorporation.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <strong data-i18n="phone_label">TELÉFONO</strong>
+                            <p>+51 978 777 703</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper reveal fade-left">
+                <form action="#" class="main-form">
+                    <div class="form-group full-width">
+                        <label data-i18n="form_name">NOMBRE COMPLETO</label>
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="form_email">CORREO ELECTRÓNICO</label>
+                            <input type="email" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="form_phone">TELÉFONO</label>
+                            <input type="tel" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label data-i18n="form_message">MENSAJE</label>
+                        <textarea placeholder=""></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" data-i18n="form_submit">ENVIAR MENSAJE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-aliados">
+        <div class="footer-container reveal fade-up">
+            <h3 class="aliados-title" data-i18n="footer_allies">ALIADOS ESTRATÉGICOS</h3>
+            <div class="logos-wrapper">
+                <div class="logo-item">
+                    <img src="imgs/muni-surco.png" alt="Municipalidad de Surco">
+                </div>
+                <div class="logo-divider"></div>
+                <div class="logo-item">
+                    <img src="imgs/logo-mega.png" alt="Mega">
+                </div>
+                <div class="logo-divider"></div>
+                <div class="logo-item">
+                    <img src="imgs/swiss-logo.png" alt="Swiss">
+                </div>
+                <div class="logo-divider"></div>
+                <div class="logo-item">
+                    <img src="imgs/SCE-LOGO.png" alt="SCE">
+                </div>
+            </div>
+            <p class="politicas-text" data-i18n="footer_privacy">Políticas de privacidad</p>
+            <p class="copyright-text" data-i18n="footer_copyright">© YAP Partners - Perú. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== WHATSAPP FLOTANTE ==================== -->
+    <a href="https://w.app/o3deuk" class="whatsapp-btn" target="_blank" rel="noopener"
+        aria-label="Contactar por WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

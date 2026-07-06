@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/logo-web.png" type="image/png">
+    <title>YAP PACIFIK | YAP Partners</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="fixed-page">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar scrolled">
+        <div class="nav-logo">
+            <a href="index.html"><img src="imgs/log-horizontal.png" alt="YAP Partners Logo"></a>
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-container" id="navContainer">
+            <ul class="nav-menu">
+                <li><a href="index.html" data-i18n="sub_back">INICIO</a></li>
+            </ul>
+
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <div class="nav-actions">
+                <a href="index.html#contacto" class="btn-contacto" data-i18n="nav_contacto">CONTÁCTANOS</a>
+            </div>
+        </div>
+
+        <div class="nav-overlay" id="navOverlay"></div>
+    </nav>
+
+    <!-- ==================== MODULE PAGE ==================== -->
+    <section class="module-page-section">
+        <div class="split-layout reveal fade-up">
+            <div class="split-text">
+                <p class="split-tagline" data-i18n="sub_pacifik_tagline">BIENVENIDO YAP PACIFIK</p>
+                <h2 class="split-title" data-i18n="sub_pacifik_title">Excelencia en Recursos Marinos</h2>
+                <p class="split-description" data-i18n="sub_pacifik_desc">Gestión responsable y eficiente de productos
+                    del mar con visión de sostenibilidad global.</p>
+                <a href="#" class="split-btn" data-i18n="sub_btn_more">CONOCE MÁS</a>
+            </div>
+            <div class="split-media">
+                <div class="split-video-wrapper">
+                    <video autoplay muted loop playsinline class="split-video">
+                        <source src="videos/yap-pacifik-video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
