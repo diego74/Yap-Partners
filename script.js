@@ -266,10 +266,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const carouselsData = {
                 motor: [
-                    'imgs/motors-01.png',
-                    'imgs/motors-02.png',
-                    'imgs/motors-03.png',
-                    'imgs/motors-04.png',
+                    'imgs/motors-01.webp',
+                    'imgs/motors-02.webp',
+                    'imgs/motors-03.webp',
+                    'imgs/motors-04.webp',
                 ],
                 animal: [
                     'https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80',
