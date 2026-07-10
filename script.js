@@ -4,10 +4,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // 1. NAVBAR — SCROLL (cambia color al bajar)
     // ==========================================================
     const navbar = document.querySelector('.navbar');
+    let navbarTicking = false;
+
+    function updateNavbarState() {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        navbarTicking = false;
+    }
 
     window.addEventListener('scroll', function () {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+        if (!navbarTicking) {
+            requestAnimationFrame(updateNavbarState);
+            navbarTicking = true;
+        }
+    }, { passive: true });
 
 
     // ==========================================================
@@ -47,6 +56,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // 3. SLIDER DE PROYECTOS (Múltiples instancias)
     // ==========================================================
     const allProjectSliders = document.querySelectorAll('.proyectos-slider');
+    const sliderObserver = 'IntersectionObserver' in window
+        ? new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const api = entry.target.projectSliderApi;
+                if (!api) return;
+
+                if (entry.isIntersecting) {
+                    api.loadBackgrounds();
+                    api.start();
+                } else {
+                    api.stop();
+                }
+            });
+        }, { rootMargin: '450px 0px', threshold: 0.01 })
+        : null;
 
     allProjectSliders.forEach(slider => {
         const sliderTrack = slider.querySelector('.slider-track');
@@ -57,6 +81,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let slideIndex = 0;
         let sliderTimer;
+        let backgroundsLoaded = false;
+
+        function loadBackgrounds() {
+            if (backgroundsLoaded) return;
+            slides.forEach(slide => slide.classList.add('is-bg-loaded'));
+            backgroundsLoaded = true;
+        }
 
         function goToSlide(index) {
             if (sliderTrack) {
@@ -75,18 +106,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function startSliderTimer() {
+            if (sliderTimer || totalSlides <= 1) return;
             sliderTimer = setInterval(nextSlide, 5000);
         }
 
-        function resetSliderTimer() {
+        function stopSliderTimer() {
             clearInterval(sliderTimer);
+            sliderTimer = null;
+        }
+
+        function resetSliderTimer() {
+            stopSliderTimer();
             startSliderTimer();
         }
 
         if (sliderTrack && btnNext && btnPrev) {
-            btnNext.addEventListener('click', () => { nextSlide(); resetSliderTimer(); });
-            btnPrev.addEventListener('click', () => { prevSlide(); resetSliderTimer(); });
-            startSliderTimer();
+            btnNext.addEventListener('click', () => { loadBackgrounds(); nextSlide(); resetSliderTimer(); });
+            btnPrev.addEventListener('click', () => { loadBackgrounds(); prevSlide(); resetSliderTimer(); });
+
+            slider.projectSliderApi = {
+                loadBackgrounds,
+                start: startSliderTimer,
+                stop: stopSliderTimer
+            };
+
+            if (sliderObserver) {
+                sliderObserver.observe(slider);
+            } else {
+                loadBackgrounds();
+                startSliderTimer();
+            }
         }
     });
 
