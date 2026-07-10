@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80',
                     'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=1200&q=80',
                     'https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1574158622643-69d34d72650a?auto=format&fit=crop&w=1200&q=80'
+                    'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=80'
                 ],
                 organik: [
                     'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=80',
