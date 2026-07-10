@@ -189,6 +189,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==========================================================
     const modulesTrack = document.getElementById('modulesTrack');
     const modulesContainer = document.querySelector('.modules-container');
+    const moduleCards = document.querySelectorAll('.module-card[data-bg]');
+
+    function loadModuleCardBg(card) {
+        card.style.backgroundImage = `url("${card.dataset.bg}")`;
+        card.removeAttribute('data-bg');
+    }
+
+    if ('IntersectionObserver' in window) {
+        const moduleBgObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                loadModuleCardBg(entry.target);
+                moduleBgObserver.unobserve(entry.target);
+            });
+        }, { rootMargin: '300px 0px', threshold: 0.01 });
+
+        moduleCards.forEach(card => moduleBgObserver.observe(card));
+    } else {
+        moduleCards.forEach(loadModuleCardBg);
+    }
 
     if (modulesTrack && modulesContainer) {
         let isDragging = false;
@@ -374,9 +394,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             slides.forEach((slide, idx) => {
                 const thumb = document.createElement('img');
-                thumb.src = slide;
+                thumb.dataset.src = slide;
                 thumb.className = 'popup-thumbnail-item';
                 thumb.alt = `Thumbnail ${idx + 1}`;
+                thumb.loading = 'lazy';
+                thumb.decoding = 'async';
                 thumb.addEventListener('click', () => {
                     setActiveSlide(idx);
                 });
@@ -384,6 +406,12 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             const thumbs = modal.querySelectorAll('.popup-thumbnail-item');
+
+            function loadThumbnails() {
+                thumbs.forEach(thumb => {
+                    if (!thumb.hasAttribute('src')) thumb.src = thumb.dataset.src;
+                });
+            }
 
             function setActiveSlide(index) {
                 activeIndex = (index + slides.length) % slides.length;
@@ -406,6 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             function openModal(e) {
                 e.preventDefault();
+                loadThumbnails();
                 setActiveSlide(0);
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';

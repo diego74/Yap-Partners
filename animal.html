@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imgs/logo-web.png" type="image/png">
     <title>YAP ANIMAL | YAP Partners</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
@@ -58,16 +59,17 @@
             </div>
             <div class="split-media">
                 <div class="split-video-wrapper">
-                    <video autoplay muted loop playsinline class="split-video">
-                        <source src="https://res.cloudinary.com/hqfhmq40/video/upload/v1783646049/yap-animal-video_reqpoe.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline preload="metadata" class="split-video"
+                        poster="https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_900/v1783646049/yap-animal-video_reqpoe.jpg">
+                        <source src="https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,w_1280/v1783646049/yap-animal-video_reqpoe.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
         </div>
     </section>
 
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
