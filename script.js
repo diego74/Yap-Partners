@@ -189,26 +189,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==========================================================
     const modulesTrack = document.getElementById('modulesTrack');
     const modulesContainer = document.querySelector('.modules-container');
-    const moduleCards = document.querySelectorAll('.module-card[data-bg]');
-
-    function loadModuleCardBg(card) {
-        card.style.backgroundImage = `url("${card.dataset.bg}")`;
-        card.removeAttribute('data-bg');
-    }
-
-    if ('IntersectionObserver' in window) {
-        const moduleBgObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                loadModuleCardBg(entry.target);
-                moduleBgObserver.unobserve(entry.target);
-            });
-        }, { rootMargin: '300px 0px', threshold: 0.01 });
-
-        moduleCards.forEach(card => moduleBgObserver.observe(card));
-    } else {
-        moduleCards.forEach(loadModuleCardBg);
-    }
 
     if (modulesTrack && modulesContainer) {
         let isDragging = false;
@@ -273,9 +253,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, revealOptions);
 
-    revealElements.forEach(el => {
-        revealOnScroll.observe(el);
-    });
+    if (document.body.classList.contains('fixed-page')) {
+        setTimeout(() => {
+            revealElements.forEach(el => el.classList.add('active'));
+        }, 100);
+    } else {
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    }
 
     // ==========================================================
     // 7. TRADUCCIÓN (ES / EN)
