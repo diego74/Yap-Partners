@@ -122,6 +122,25 @@
     }
 }
 
+@media (max-width: 600px) {
+    .project-feature>img {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        object-fit: contain;
+    }
+
+    .project-gallery-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-gallery-strip img {
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+    }
+}
+
 
 *,
 *::before,
@@ -1570,7 +1589,7 @@ body {
 
 @media (max-width: 768px) {
     :root {
-        --slider-height: 480px;
+        --slider-height: 360px;
     }
 
 
@@ -1621,6 +1640,13 @@ body {
 
     .mod-mobile .slide-5 {
         --slide-bg: url(imgs/PROYECYO-05-FINAL-2-MOB.webp);
+    }
+
+    .mod-mobile .slide {
+        background-color: #111a2d;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
 
@@ -1683,14 +1709,17 @@ body {
 
     .nav-arrows {
         width: 100%;
-        margin-top: -30px;
-        padding-right: 20px;
+        margin-top: 0;
+        padding-right: 0;
+        gap: 1px;
         justify-content: flex-end;
+        background-color: var(--color-navy-mid);
     }
 
     .arrow-btn {
-        width: 60px;
-        height: 60px;
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
     }
 
     .slide-text h2,
@@ -2039,6 +2068,30 @@ body {
     font-weight: 500;
 }
 
+.subpage-back-btn {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: #5c6b8c;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.subpage-back-btn span:first-child {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.subpage-back-btn:hover {
+    color: var(--color-gold-dark);
+    transform: translateX(-4px);
+}
+
 .split-btn {
     display: inline-block;
     padding: 16px 36px;
@@ -2111,8 +2164,26 @@ body {
 }
 
 @media (max-width: 600px) {
+    .fixed-page {
+        height: auto;
+        min-height: 100svh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .module-page-section {
+        height: auto;
+        min-height: 100svh;
+        padding-top: 84px;
+        align-items: flex-start;
+    }
+
     .split-text {
-        padding: 40px 20px 20px 20px;
+        padding: 24px 20px 20px;
+    }
+
+    .subpage-back-btn {
+        margin-bottom: 24px;
     }
 
     .split-title {
@@ -2170,6 +2241,10 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+}
+
+.values-carousel-controls {
+    display: none;
 }
 
 .value-card {
@@ -2261,7 +2336,70 @@ body {
     }
 
     .values-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        padding: 4px 2px 14px;
+    }
+
+    .values-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .value-card {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .value-card:hover {
+        transform: none !important;
+    }
+
+    .values-carousel-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 20px;
+    }
+
+    .values-carousel-btn {
+        width: 46px;
+        height: 46px;
+        border: 0;
+        border-radius: 50%;
+        background-color: var(--color-navy);
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .values-carousel-dots {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .values-carousel-dot {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background-color: rgba(27, 42, 74, 0.28);
+        cursor: pointer;
+        transition: width 0.25s ease, border-radius 0.25s ease, background-color 0.25s ease;
+    }
+
+    .values-carousel-dot.active {
+        width: 24px;
+        border-radius: 10px;
+        background-color: var(--color-gold);
     }
 }
 

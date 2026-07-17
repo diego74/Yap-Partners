@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imgs/logo-web.png" type="image/png">
+    <link rel="preload" href="imgs/logo-color.webp" as="image" type="image/webp" fetchpriority="high">
     <title>YAP Partners | Lima - Perú</title>
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
     <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar">
         <div class="nav-logo">
-            <img src="imgs/logo-color.webp" alt="YAP Partners Logo">
+            <img src="imgs/logo-color.webp" alt="YAP Partners Logo" width="200" height="48" fetchpriority="high" decoding="async">
         </div>
 
         <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú">
@@ -60,7 +61,7 @@
         <div class="hero-overlay">
             <div class="hero-content reveal fade-up">
                 <div class="hero-logo-box">
-                    <img src="imgs/logo-color.webp" alt="YAP Logo" class="hero-brand-logo">
+                    <img src="imgs/logo-color.webp" alt="YAP Logo" class="hero-brand-logo" width="300" height="72" fetchpriority="high" decoding="async">
                 </div>
                 <h1 class="hero-main-title" data-i18n="hero_title">Holding <i>Empresarial</i><br>Multisectorial</h1>
                 <p class="hero-subtitle" data-i18n="hero_subtitle">PROYECTOS QUE AVANZAN, RESULTADOS QUE IMPACTAN</p>
@@ -370,11 +371,17 @@
                         parte de nuestros proyectos.</p>
                 </div>
             </div>
+
+            <div class="values-carousel-controls" aria-label="Controles del carrusel de valores">
+                <button class="values-carousel-btn values-prev" type="button" aria-label="Valor anterior">&#8592;</button>
+                <div class="values-carousel-dots" aria-label="Seleccionar valor"></div>
+                <button class="values-carousel-btn values-next" type="button" aria-label="Valor siguiente">&#8594;</button>
+            </div>
         </div>
     </section>
 
     <!-- ==================== MÓDULOS DE EMPRESAS ==================== -->
-    <section class="modules-section">
+    <section class="modules-section" id="empresas">
         <div class="services-header reveal fade-up">
             <p class="services-tagline" data-i18n="group_tagline">NUESTRO</p>
             <h2 class="services-main-title" data-i18n="group_title">Grupo Empresarial</h2>
@@ -1029,8 +1036,8 @@
                         <span class="icon">📍</span>
                         <div>
                             <strong data-i18n="office_label">OFICINA PRINCIPAL</strong>
-                            <p data-i18n="office_address">Av. República de Colombia 791 Of. 701 <br> San Isidro, Lima,
-                                Perú</p>
+                            <p data-i18n="office_address">Av. Circunvalación del Golf L Nro. 134 Int. 51 (Patio
+                                Panorama), <br> Santiago de Surco</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1109,8 +1116,8 @@
         <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
-    <script src="translations.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="translations.js?v=7" defer></script>
+    <script src="script.js?v=7" defer></script>
 
 </body>
 

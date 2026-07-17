@@ -139,6 +139,80 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // ==========================================================
+    // 3.1 CARRUSEL DE VALORES (mobile)
+    // ==========================================================
+    const valuesTrack = document.querySelector('.values-grid');
+    const valueCards = valuesTrack ? Array.from(valuesTrack.querySelectorAll('.value-card')) : [];
+    const valuesPrev = document.querySelector('.values-prev');
+    const valuesNext = document.querySelector('.values-next');
+    const valuesDots = document.querySelector('.values-carousel-dots');
+
+    if (valuesTrack && valueCards.length && valuesPrev && valuesNext && valuesDots) {
+        let valueIndex = 0;
+        let valuesScrollTicking = false;
+
+        const dotButtons = valueCards.map((card, index) => {
+            card.setAttribute('role', 'group');
+            card.setAttribute('aria-label', `${index + 1} de ${valueCards.length}`);
+
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'values-carousel-dot';
+            dot.setAttribute('aria-label', `Ir al valor ${index + 1}`);
+            dot.addEventListener('click', () => goToValue(index));
+            valuesDots.appendChild(dot);
+            return dot;
+        });
+
+        function updateValuesDots() {
+            dotButtons.forEach((dot, index) => {
+                const isActive = index === valueIndex;
+                dot.classList.toggle('active', isActive);
+                dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+            });
+        }
+
+        function goToValue(index) {
+            valueIndex = (index + valueCards.length) % valueCards.length;
+            const target = valueCards[valueIndex];
+            valuesTrack.scrollTo({
+                left: target.offsetLeft - valuesTrack.offsetLeft,
+                behavior: 'smooth'
+            });
+            updateValuesDots();
+        }
+
+        valuesPrev.addEventListener('click', () => goToValue(valueIndex - 1));
+        valuesNext.addEventListener('click', () => goToValue(valueIndex + 1));
+
+        valuesTrack.addEventListener('scroll', () => {
+            if (valuesScrollTicking || window.innerWidth > 768) return;
+            valuesScrollTicking = true;
+            requestAnimationFrame(() => {
+                const trackLeft = valuesTrack.offsetLeft + valuesTrack.scrollLeft;
+                let closestIndex = 0;
+                let closestDistance = Infinity;
+
+                valueCards.forEach((card, index) => {
+                    const distance = Math.abs(card.offsetLeft - trackLeft);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestIndex = index;
+                    }
+                });
+
+                if (closestIndex !== valueIndex) {
+                    valueIndex = closestIndex;
+                    updateValuesDots();
+                }
+                valuesScrollTicking = false;
+            });
+        }, { passive: true });
+
+        updateValuesDots();
+    }
+
 
     // ==========================================================
     // 4. CAROUSEL — QUIÉNES SOMOS

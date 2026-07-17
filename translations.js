@@ -112,7 +112,7 @@ const translations = {
         contact_title: "Contáctanos",
         contact_desc: "Ingresa tus datos para realizar alguna consulta de nosotros o de algunos de nuestros proyectos.",
         office_label: "OFICINA PRINCIPAL",
-        office_address: "Av. República de Colombia 791 Of. 701 <br> San Isidro, Lima, Perú",
+        office_address: "Av. Circunvalación del Golf L Nro. 134 Int. 51 (Patio Panorama), <br> Santiago de Surco",
         email_label: "CORREO ELECTRÓNICO",
         phone_label: "TELÉFONO",
         form_name: "NOMBRE COMPLETO",
@@ -128,6 +128,7 @@ const translations = {
 
         // Subpáginas (Módulos)
         sub_back: "INICIO",
+        sub_back_companies: "VOLVER A EMPRESAS",
         sub_btn_more: "CONOCE MÁS",
 
         sub_motor_tagline: "BIENVENIDO YAP MOTOR",
@@ -293,7 +294,7 @@ const translations = {
         contact_title: "Contact Us",
         contact_desc: "Enter your details to make an inquiry about us or some of our projects.",
         office_label: "MAIN OFFICE",
-        office_address: "791 Republic of Colombia Ave. Of. 701 <br> San Isidro, Lima, Peru",
+        office_address: "Av. Circunvalación del Golf L Nro. 134 Int. 51 (Patio Panorama), <br> Santiago de Surco",
         email_label: "EMAIL",
         phone_label: "PHONE",
         form_name: "FULL NAME",
@@ -309,6 +310,7 @@ const translations = {
 
         // Subpages (Modules)
         sub_back: "HOME",
+        sub_back_companies: "BACK TO COMPANIES",
         sub_btn_more: "LEARN MORE",
 
         sub_motor_tagline: "WELCOME TO YAP MOTOR",
