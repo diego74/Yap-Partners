@@ -1073,6 +1073,10 @@ body {
     font-weight: 300;
 }
 
+.services-carousel-controls {
+    display: none;
+}
+
 @media (max-width: 1024px) {
     .services-container {
         grid-template-columns: repeat(3, 1fr);
@@ -1081,11 +1085,86 @@ body {
 
 @media (max-width: 600px) {
     .services-module {
-        padding: 50px 10%;
+        padding: 50px 0;
+        overflow: hidden;
+    }
+
+    .services-header {
+        padding: 0 10%;
     }
 
     .services-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        gap: 16px;
+        max-width: none;
+        padding: 4px 10% 18px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 10%;
+        scrollbar-width: none;
+        overscroll-behavior-inline: contain;
+    }
+
+    .services-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-card {
+        flex: 0 0 88%;
+        min-width: 0;
+        scroll-snap-align: start;
+        padding: 36px 24px;
+    }
+
+    .services-carousel-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 12px;
+    }
+
+    .services-carousel-btn {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: var(--color-gold);
+        color: #fff;
+        font-size: 21px;
+        line-height: 1;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        transition: background-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .services-carousel-btn:active {
+        transform: scale(0.96);
+    }
+
+    .services-carousel-dots {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .services-carousel-dot {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background-color: #d8d8d8;
+        cursor: pointer;
+        transition: width 0.25s ease, background-color 0.25s ease;
+    }
+
+    .services-carousel-dot.active {
+        width: 22px;
+        border-radius: 10px;
+        background-color: var(--color-gold);
     }
 
     .services-main-title {
@@ -1644,7 +1723,7 @@ body {
 
     .mod-mobile .slide {
         background-color: #111a2d;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }
@@ -1711,7 +1790,7 @@ body {
         width: 100%;
         margin-top: 0;
         padding-right: 0;
-        gap: 1px;
+        gap: 0;
         justify-content: flex-end;
         background-color: var(--color-navy-mid);
     }
@@ -1719,7 +1798,15 @@ body {
     .arrow-btn {
         width: 56px;
         height: 56px;
+        padding: 0;
+        display: grid;
+        place-items: center;
+        line-height: 1;
         font-size: 22px;
+    }
+
+    .arrow-btn + .arrow-btn {
+        border-left: 1px solid rgba(255, 255, 255, 0.28);
     }
 
     .slide-text h2,

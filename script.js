@@ -213,6 +213,79 @@ document.addEventListener('DOMContentLoaded', function () {
         updateValuesDots();
     }
 
+    // ==========================================================
+    // 3.2 CARRUSEL DE LÍNEAS DE SERVICIO (mobile)
+    // ==========================================================
+    const servicesTrack = document.querySelector('.services-container');
+    const serviceCards = servicesTrack ? Array.from(servicesTrack.querySelectorAll('.service-card')) : [];
+    const servicesPrev = document.querySelector('.services-prev');
+    const servicesNext = document.querySelector('.services-next');
+    const servicesDots = document.querySelector('.services-carousel-dots');
+
+    if (servicesTrack && serviceCards.length && servicesPrev && servicesNext && servicesDots) {
+        let serviceIndex = 0;
+        let servicesScrollTicking = false;
+
+        const serviceDotButtons = serviceCards.map((card, index) => {
+            card.setAttribute('role', 'group');
+            card.setAttribute('aria-label', `${index + 1} de ${serviceCards.length}`);
+
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'services-carousel-dot';
+            dot.setAttribute('aria-label', `Ir a la línea de servicio ${index + 1}`);
+            dot.addEventListener('click', () => goToService(index));
+            servicesDots.appendChild(dot);
+            return dot;
+        });
+
+        function updateServicesDots() {
+            serviceDotButtons.forEach((dot, index) => {
+                const isActive = index === serviceIndex;
+                dot.classList.toggle('active', isActive);
+                dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+            });
+        }
+
+        function goToService(index) {
+            serviceIndex = (index + serviceCards.length) % serviceCards.length;
+            servicesTrack.scrollTo({
+                left: serviceCards[serviceIndex].offsetLeft - servicesTrack.offsetLeft,
+                behavior: 'smooth'
+            });
+            updateServicesDots();
+        }
+
+        servicesPrev.addEventListener('click', () => goToService(serviceIndex - 1));
+        servicesNext.addEventListener('click', () => goToService(serviceIndex + 1));
+
+        servicesTrack.addEventListener('scroll', () => {
+            if (servicesScrollTicking || window.innerWidth > 600) return;
+            servicesScrollTicking = true;
+            requestAnimationFrame(() => {
+                const trackLeft = servicesTrack.offsetLeft + servicesTrack.scrollLeft;
+                let closestIndex = 0;
+                let closestDistance = Infinity;
+
+                serviceCards.forEach((card, index) => {
+                    const distance = Math.abs(card.offsetLeft - trackLeft);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestIndex = index;
+                    }
+                });
+
+                if (closestIndex !== serviceIndex) {
+                    serviceIndex = closestIndex;
+                    updateServicesDots();
+                }
+                servicesScrollTicking = false;
+            });
+        }, { passive: true });
+
+        updateServicesDots();
+    }
+
 
     // ==========================================================
     // 4. CAROUSEL — QUIÉNES SOMOS
