@@ -1668,7 +1668,7 @@ body {
 
 @media (max-width: 768px) {
     :root {
-        --slider-height: 360px;
+        --slider-height: 203px;
     }
 
 
@@ -1685,6 +1685,8 @@ body {
     .mod-mobile .nav-arrows {
         padding-left: 0;
         padding-right: 20px;
+        position: absolute;
+        bottom: 0;
     }
 
 
@@ -1701,6 +1703,26 @@ body {
     }
 
 
+    .mod-mobile .slide-1 {
+        --slide-bg: url(imgs/PROYECYO-01-FINAL-2-MOB.png);
+    }
+
+    .mod-mobile .slide-2 {
+        --slide-bg: url(imgs/PROYECYO-02-FINAL-2-MOB.png);
+    }
+
+    .mod-mobile .slide-3 {
+        --slide-bg: url(imgs/PROYECYO-03-FINAL-2-MOB.png);
+    }
+
+    .mod-mobile .slide-4 {
+        --slide-bg: url(imgs/PROYECYO-04-FINAL-2-MOB.png);
+    }
+
+    .mod-mobile .slide-5 {
+        --slide-bg: url(imgs/PROYECYO-05-FINAL-2-MOB.png);
+    }
+/*
     .mod-mobile .slide-1 {
         --slide-bg: url(imgs/PROYECYO-01-FINAL-2-MOB.webp);
     }
@@ -1719,7 +1741,7 @@ body {
 
     .mod-mobile .slide-5 {
         --slide-bg: url(imgs/PROYECYO-05-FINAL-2-MOB.webp);
-    }
+    } */
 
     .mod-mobile .slide {
         background-color: #111a2d;
@@ -1732,7 +1754,7 @@ body {
     .slide-text {
         display: block !important;
         position: absolute;
-        top: 30px;
+        top: 8px;
         left: 25px;
         text-align: left;
     }
@@ -1784,15 +1806,20 @@ body {
         width: 100%;
         margin-bottom: 0;
         padding: 30px 25px;
+        padding-top: 10px;
+        padding-bottom: 34px;
     }
 
     .nav-arrows {
         width: 100%;
         margin-top: 0;
+        margin-bottom: 0;
         padding-right: 0;
         gap: 0;
         justify-content: flex-end;
-        background-color: var(--color-navy-mid);
+        /* position: absolute;
+        bottom: 0; */
+        /* background-color: var(--color-navy-mid); */
     }
 
     .arrow-btn {

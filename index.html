@@ -1064,24 +1064,25 @@
             </div>
 
             <div class="contact-form-wrapper reveal fade-left">
-                <form action="#" class="main-form">
+                <form action="mailto:contacto@yapcorporation.com" method="post" enctype="text/plain"
+                    class="main-form">
                     <div class="form-group full-width">
                         <label data-i18n="form_name">NOMBRE COMPLETO</label>
-                        <input type="text" placeholder="">
+                        <input type="text" name="nombre" placeholder="" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label data-i18n="form_email">CORREO ELECTRÓNICO</label>
-                            <input type="email" placeholder="">
+                            <input type="email" name="correo" placeholder="" required>
                         </div>
                         <div class="form-group">
                             <label data-i18n="form_phone">TELÉFONO</label>
-                            <input type="tel" placeholder="">
+                            <input type="tel" name="telefono" placeholder="">
                         </div>
                     </div>
                     <div class="form-group full-width">
                         <label data-i18n="form_message">MENSAJE</label>
-                        <textarea placeholder=""></textarea>
+                        <textarea name="mensaje" placeholder="" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit" data-i18n="form_submit">ENVIAR MENSAJE</button>
                 </form>
@@ -1117,7 +1118,7 @@
     </footer>
 
     <!-- ==================== WHATSAPP FLOTANTE ==================== -->
-    <a href="https://w.app/o3deuk" class="whatsapp-btn" target="_blank" rel="noopener"
+    <a href="https://wa.me/51978777703" class="whatsapp-btn" target="_blank" rel="noopener"
         aria-label="Contactar por WhatsApp">
         <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>

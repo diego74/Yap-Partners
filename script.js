@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.querySelector('.main-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!contactForm.reportValidity()) return;
+
+            const formData = new FormData(contactForm);
+            const subject = 'Nueva consulta desde la web de YAP Partners';
+            const body = [
+                `Nombre: ${formData.get('nombre')}`,
+                `Correo: ${formData.get('correo')}`,
+                `Teléfono: ${formData.get('telefono') || 'No indicado'}`,
+                '',
+                'Mensaje:',
+                formData.get('mensaje')
+            ].join('\n');
+
+            window.location.href = `mailto:contacto@yapcorporation.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    }
 
     // ==========================================================
     // 1. NAVBAR — SCROLL (cambia color al bajar)
