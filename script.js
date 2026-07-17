@@ -2,23 +2,46 @@ document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.querySelector('.main-form');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (event) => {
+        contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
             if (!contactForm.reportValidity()) return;
 
             const formData = new FormData(contactForm);
-            const subject = 'Nueva consulta desde la web de YAP Partners';
-            const body = [
-                `Nombre: ${formData.get('nombre')}`,
-                `Correo: ${formData.get('correo')}`,
-                `Teléfono: ${formData.get('telefono') || 'No indicado'}`,
-                '',
-                'Mensaje:',
-                formData.get('mensaje')
-            ].join('\n');
+            const submitButton = contactForm.querySelector('.btn-submit');
+            const status = contactForm.querySelector('.form-status');
+            const originalButtonText = submitButton.textContent;
 
-            window.location.href = `mailto:contacto@yapcorporation.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            submitButton.disabled = true;
+            submitButton.textContent = 'ENVIANDO...';
+            status.className = 'form-status';
+            status.textContent = '';
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/contacto@yapcorporation.com', {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json'
+                    },
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (!response.ok || result.success === 'false' || result.success === false) {
+                    throw new Error(result.message || 'No se pudo enviar el mensaje.');
+                }
+
+                contactForm.reset();
+                status.classList.add('success');
+                status.textContent = 'Mensaje enviado correctamente. Nos comunicaremos contigo pronto.';
+            } catch (error) {
+                status.classList.add('error');
+                status.textContent = 'No pudimos enviar el mensaje. Inténtalo nuevamente en unos minutos.';
+                console.error('Error al enviar el formulario:', error);
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
         });
     }
 

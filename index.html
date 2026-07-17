@@ -1064,8 +1064,9 @@
             </div>
 
             <div class="contact-form-wrapper reveal fade-left">
-                <form action="mailto:contacto@yapcorporation.com" method="post" enctype="text/plain"
+                <form action="https://formsubmit.co/contacto@yapcorporation.com" method="post"
                     class="main-form">
+                    <input type="hidden" name="_subject" value="Nueva consulta desde la web de YAP Partners">
                     <div class="form-group full-width">
                         <label data-i18n="form_name">NOMBRE COMPLETO</label>
                         <input type="text" name="nombre" placeholder="" required>
@@ -1085,6 +1086,7 @@
                         <textarea name="mensaje" placeholder="" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit" data-i18n="form_submit">ENVIAR MENSAJE</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>
