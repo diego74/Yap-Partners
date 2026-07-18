@@ -428,6 +428,121 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ==========================================================
+    // 5.1 CONTROLES PARA SLIDERS MOBILE SIN NAVEGACIÓN
+    // ==========================================================
+    function createMobileSliderControls(itemCount, label) {
+        const controls = document.createElement('div');
+        controls.className = 'mobile-slider-controls';
+        controls.setAttribute('aria-label', `Controles del carrusel de ${label}`);
+
+        const prev = document.createElement('button');
+        prev.type = 'button';
+        prev.className = 'mobile-slider-btn mobile-slider-prev';
+        prev.setAttribute('aria-label', `${label}: anterior`);
+        prev.textContent = '←';
+
+        const dots = document.createElement('div');
+        dots.className = 'mobile-slider-dots';
+
+        const next = document.createElement('button');
+        next.type = 'button';
+        next.className = 'mobile-slider-btn mobile-slider-next';
+        next.setAttribute('aria-label', `${label}: siguiente`);
+        next.textContent = '→';
+
+        const dotButtons = Array.from({ length: itemCount }, (_, index) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'mobile-slider-dot';
+            dot.setAttribute('aria-label', `Ir a ${label} ${index + 1}`);
+            dots.appendChild(dot);
+            return dot;
+        });
+
+        controls.append(prev, dots, next);
+        return { controls, prev, next, dotButtons };
+    }
+
+    function setActiveMobileDot(dots, activeIndex) {
+        dots.forEach((dot, index) => {
+            const isActive = index === activeIndex;
+            dot.classList.toggle('active', isActive);
+            dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+        });
+    }
+
+    if (modulesTrack && modulesContainer) {
+        const moduleCards = Array.from(modulesTrack.querySelectorAll('.module-card'));
+        const moduleControls = createMobileSliderControls(moduleCards.length, 'empresa');
+        let moduleIndex = 0;
+
+        modulesContainer.insertAdjacentElement('afterend', moduleControls.controls);
+
+        function goToModule(index) {
+            moduleIndex = (index + moduleCards.length) % moduleCards.length;
+            const maxScroll = Math.max(0, modulesTrack.scrollWidth - modulesContainer.clientWidth);
+            const targetX = Math.min(moduleCards[moduleIndex].offsetLeft, maxScroll);
+            modulesTrack.style.transform = `translateX(-${targetX}px)`;
+            setActiveMobileDot(moduleControls.dotButtons, moduleIndex);
+        }
+
+        moduleControls.prev.addEventListener('click', () => goToModule(moduleIndex - 1));
+        moduleControls.next.addEventListener('click', () => goToModule(moduleIndex + 1));
+        moduleControls.dotButtons.forEach((dot, index) => dot.addEventListener('click', () => goToModule(index)));
+        setActiveMobileDot(moduleControls.dotButtons, moduleIndex);
+    }
+
+    document.querySelectorAll('.workers-row').forEach((workersTrack, rowIndex) => {
+        const workerCards = Array.from(workersTrack.querySelectorAll('.worker-card'));
+        if (workerCards.length < 2) return;
+
+        const workerControls = createMobileSliderControls(workerCards.length, 'directivo');
+        let workerIndex = 0;
+        let workersScrollTicking = false;
+
+        workersTrack.insertAdjacentElement('afterend', workerControls.controls);
+
+        function goToWorker(index) {
+            workerIndex = (index + workerCards.length) % workerCards.length;
+            const target = workerCards[workerIndex];
+            workersTrack.scrollTo({
+                left: target.offsetLeft - workersTrack.offsetLeft,
+                behavior: 'smooth'
+            });
+            setActiveMobileDot(workerControls.dotButtons, workerIndex);
+        }
+
+        workerControls.prev.addEventListener('click', () => goToWorker(workerIndex - 1));
+        workerControls.next.addEventListener('click', () => goToWorker(workerIndex + 1));
+        workerControls.dotButtons.forEach((dot, index) => dot.addEventListener('click', () => goToWorker(index)));
+
+        workersTrack.addEventListener('scroll', () => {
+            if (workersScrollTicking || window.innerWidth > 768) return;
+            workersScrollTicking = true;
+            requestAnimationFrame(() => {
+                const trackLeft = workersTrack.offsetLeft + workersTrack.scrollLeft;
+                let closestIndex = 0;
+                let closestDistance = Infinity;
+
+                workerCards.forEach((card, index) => {
+                    const distance = Math.abs(card.offsetLeft - trackLeft);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestIndex = index;
+                    }
+                });
+
+                workerIndex = closestIndex;
+                setActiveMobileDot(workerControls.dotButtons, workerIndex);
+                workersScrollTicking = false;
+            });
+        }, { passive: true });
+
+        workerControls.controls.dataset.sliderRow = rowIndex + 1;
+        setActiveMobileDot(workerControls.dotButtons, workerIndex);
+    });
+
+    // ==========================================================
     // 6. ANIMACIONES REVEAL (Intersection Observer)
     // ==========================================================
     const revealElements = document.querySelectorAll('.reveal');
