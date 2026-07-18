@@ -429,7 +429,7 @@ body {
         display: none;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         position: fixed;
         top: 0;
         left: 0;
@@ -441,7 +441,8 @@ body {
         z-index: 1050;
         margin-left: 0;
         gap: 0;
-        padding: 0;
+        padding: 96px 0 24px;
+        overflow-y: auto;
     }
 
     .nav-container.open {
@@ -478,7 +479,7 @@ body {
     }
 
     .nav-actions {
-        margin-top: 40px;
+        margin-top: 0;
         width: 100%;
         padding: 0 40px;
     }
@@ -815,7 +816,7 @@ body {
 @media (max-width: 768px) {
     .carousel-section {
         padding: 60px 0;
-        display: none;
+        display: block;
     }
 
     .carousel-slide {
@@ -1364,8 +1365,8 @@ body {
 
 .proyectos-slider {
     width: 100%;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 140px;
 }
 
 .slider-wrapper {
@@ -1548,7 +1549,7 @@ body {
 
 .overlay-controls {
     position: absolute;
-    bottom: 0;
+    bottom: -23px;
     left: 0;
     width: 100%;
     display: flex;
@@ -1560,7 +1561,7 @@ body {
 
 .info-card {
     background-color: var(--color-navy-mid);
-    padding: 35px 30px;
+    padding: 20px 30px;
     width: 386px;
     margin-bottom: -123px;
     pointer-events: auto;
@@ -1602,7 +1603,7 @@ body {
 .nav-arrows {
     display: flex;
     gap: 10px;
-    margin-bottom: -40px;
+    margin-bottom: -50px;
     padding-right: 20px;
     pointer-events: auto;
 }
@@ -1722,7 +1723,8 @@ body {
     .mod-mobile .slide-5 {
         --slide-bg: url(imgs/PROYECYO-05-FINAL-2-MOB.png);
     }
-/*
+
+    /*
     .mod-mobile .slide-1 {
         --slide-bg: url(imgs/PROYECYO-01-FINAL-2-MOB.webp);
     }
@@ -1800,6 +1802,7 @@ body {
         flex-direction: column;
         align-items: flex-start;
         position: relative;
+        bottom: 0;
     }
 
     .info-card {
@@ -1832,7 +1835,7 @@ body {
         font-size: 22px;
     }
 
-    .arrow-btn + .arrow-btn {
+    .arrow-btn+.arrow-btn {
         border-left: 1px solid rgba(255, 255, 255, 0.28);
     }
 
@@ -2585,7 +2588,7 @@ body {
 
 @media (max-width: 768px) {
     .lang-switch {
-        margin: 20px 0;
+        margin: 8px 0;
         justify-content: center;
         width: 100%;
     }
@@ -3248,16 +3251,127 @@ body {
 
 
     .carousel-slide {
-        padding-left: 55px !important;
-        padding-right: 55px !important;
+        padding-left: 46px !important;
+        padding-right: 46px !important;
     }
 
     .carousel-slide.slide-compromiso,
     .carousel-slide.slide-ventajas,
     .carousel-slide.slide-mision-vision,
     .carousel-slide.slide-capacidad {
-        padding-left: 55px !important;
-        padding-right: 55px !important;
+        padding-left: 46px !important;
+        padding-right: 46px !important;
+    }
+
+    .carousel-section {
+        padding: 40px 0;
+    }
+
+    .carousel-subtitle {
+        margin-bottom: 10px;
+    }
+
+    .carousel-title {
+        font-size: 23px;
+        margin-bottom: 14px;
+    }
+
+    .carousel-content {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .carousel-mv-mobile .carousel-title {
+        margin-top: 22px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .carousel-mv-mobile .mision-vision-grid,
+    .carousel-slide.slide-compromiso .compromiso-grid,
+    .carousel-slide.slide-ventajas .compromiso-grid,
+    .carousel-slide.slide-capacidad .capacidad-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .carousel-mv-mobile .mision-vision-grid {
+        align-items: stretch;
+    }
+
+    .mv-icon-box,
+    .compromiso-icon-box {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 6px;
+    }
+
+    .mv-icon-box svg,
+    .compromiso-icon-box svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .mv-header {
+        padding: 7px 0;
+        margin-bottom: 7px;
+        font-size: 12px;
+    }
+
+    .mv-text {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .compromiso-card {
+        padding: 12px 8px;
+    }
+
+    .compromiso-card h3 {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .compromiso-card p {
+        font-size: 10.5px;
+        line-height: 1.35;
+    }
+
+    .carousel-slide.slide-ventajas .compromiso-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .capacidad-item {
+        min-width: 0;
+        flex-direction: column;
+    }
+
+    .capacidad-num {
+        min-width: 0;
+        padding: 6px 0;
+        font-size: 15px;
+    }
+
+    .capacidad-content {
+        padding: 9px 8px;
+        text-align: center;
+    }
+
+    .capacidad-content h3 {
+        font-size: 11px;
+        margin-bottom: 4px;
+    }
+
+    .capacidad-content p {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .carousel-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+        background: rgba(255, 255, 255, 0.92);
     }
 
 

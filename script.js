@@ -341,6 +341,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let carouselIndex = 0;
 
     if (carouselTrack && nextBtn && prevBtn) {
+        let carouselTimer;
+
         function getVisibleSlides() {
             return Array.from(carouselTrack.children).filter(
                 child => getComputedStyle(child).display !== 'none'
@@ -351,28 +353,33 @@ document.addEventListener('DOMContentLoaded', function () {
             const visible = getVisibleSlides();
             const targetSlide = visible[visualIndex];
             if (!targetSlide) return;
-            const allSlides = Array.from(carouselTrack.children);
-            const domIndex = allSlides.indexOf(targetSlide);
-            carouselTrack.style.transform = `translateX(-${domIndex * 100}%)`;
+            carouselTrack.style.transform = `translateX(-${visualIndex * 100}%)`;
+        }
+
+        function startCarouselTimer() {
+            clearInterval(carouselTimer);
+            carouselTimer = setInterval(() => {
+                const total = getVisibleSlides().length;
+                carouselIndex = (carouselIndex + 1) % total;
+                goToCarousel(carouselIndex);
+            }, 7000);
         }
 
         nextBtn.addEventListener('click', () => {
             const total = getVisibleSlides().length;
             carouselIndex = (carouselIndex + 1) % total;
             goToCarousel(carouselIndex);
+            startCarouselTimer();
         });
 
         prevBtn.addEventListener('click', () => {
             const total = getVisibleSlides().length;
             carouselIndex = (carouselIndex - 1 + total) % total;
             goToCarousel(carouselIndex);
+            startCarouselTimer();
         });
 
-        setInterval(() => {
-            const total = getVisibleSlides().length;
-            carouselIndex = (carouselIndex + 1) % total;
-            goToCarousel(carouselIndex);
-        }, 7000);
+        startCarouselTimer();
     }
 
 
