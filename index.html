@@ -7,7 +7,7 @@
     <link rel="icon" href="imgs/logo-web.png" type="image/png">
     <link rel="preload" href="imgs/logo-color.webp" as="image" type="image/webp" fetchpriority="high">
     <title>YAP Partners | Lima - Perú</title>
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=15">
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,16 @@
 </head>
 
 <body>
+    <div class="page-loader" aria-hidden="true">
+        <span class="page-loader-dot"></span>
+    </div>
 
     <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar">
         <div class="nav-logo">
-            <img src="imgs/logo-color.webp" alt="YAP Partners Logo" width="200" height="48" fetchpriority="high" decoding="async">
+            <a href="#" aria-label="Volver al inicio">
+                <img src="imgs/logo-color.webp" alt="YAP Partners Logo" width="200" height="48" fetchpriority="high" decoding="async">
+            </a>
         </div>
 
         <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú">
@@ -33,6 +38,7 @@
             <ul class="nav-menu">
                 <li><a href="#nosotros" data-i18n="nav_nosotros">NOSOTROS</a></li>
                 <li><a href="#ejecutivo" data-i18n="nav_ejecutivo">EJECUTIVO</a></li>
+                <li><a href="#empleos" data-i18n="nav_empleos">EMPLEOS</a></li>
                 <li><a href="#proyectos" data-i18n="nav_proyectos">PROYECTOS</a></li>
             </ul>
 
@@ -61,7 +67,7 @@
         <div class="hero-overlay">
             <div class="hero-content reveal fade-up">
                 <div class="hero-logo-box">
-                    <img src="imgs/logo-color.webp" alt="YAP Logo" class="hero-brand-logo" width="300" height="72" fetchpriority="high" decoding="async">
+                    <img src="imgs/logo-color.webp" alt="YAP Logo" class="hero-brand-logo" width="400" height="172" fetchpriority="high" decoding="async">
                 </div>
                 <h1 class="hero-main-title" data-i18n="hero_title">Holding <i>Empresarial</i><br>Multisectorial</h1>
                 <p class="hero-subtitle" data-i18n="hero_subtitle">PROYECTOS QUE AVANZAN, RESULTADOS QUE IMPACTAN</p>
@@ -396,60 +402,80 @@
                     <a href="motor.html">
                         <div class="module-overlay">
                             <div class="module-info">
-                                <p class="module-category">YAP MOTOR</p>
+                                <p class="module-category">YAP MOTOR GROUP</p>
                                 <span class="module-plus">+</span>
                             </div>
                             <img loading="lazy" decoding="async" src="imgs/motor-logo-1.png" alt="Logo Motor" class="module-logo">
                         </div>
                     </a>
+                    <div class="module-caption">
+                        <img src="imgs/motor-logo-1.png" alt="" aria-hidden="true">
+                        <div><strong>YAP Motor Group</strong><span>Mantenimiento automotriz y gestión de flotas</span></div>
+                    </div>
                 </div>
 
                 <div class="module-card" style="background-image: url('imgs/animal-empresa.webp');">
                     <a href="animal.html">
                         <div class="module-overlay">
                             <div class="module-info">
-                                <p class="module-category">YAP ANIMAL</p>
+                                <p class="module-category">YAP ANIMAL GROUP</p>
                                 <span class="module-plus">+</span>
                             </div>
                             <img loading="lazy" decoding="async" src="imgs/animal-logo.png" alt="Logo Animal" class="module-logo">
                         </div>
                     </a>
+                    <div class="module-caption">
+                        <img src="imgs/animal-logo.png" alt="" aria-hidden="true">
+                        <div><strong>YAP Animal Group</strong><span>Servicios veterinarios especializados</span></div>
+                    </div>
                 </div>
 
                 <div class="module-card" style="background-image: url('imgs/organik-empresa.webp');">
                     <a href="organik.html">
                         <div class="module-overlay">
                             <div class="module-info">
-                                <p class="module-category">YAP ORGANIK</p>
+                                <p class="module-category">YAP ORGANIK GROUP</p>
                                 <span class="module-plus">+</span>
                             </div>
                             <img loading="lazy" decoding="async" src="imgs/organik-logo.png" alt="Logo Organik" class="module-logo">
                         </div>
                     </a>
+                    <div class="module-caption">
+                        <img src="imgs/organik-logo.png" alt="" aria-hidden="true">
+                        <div><strong>YAP Organik Group</strong><span>Producción agrícola y alimentos</span></div>
+                    </div>
                 </div>
 
                 <div class="module-card" style="background-image: url('imgs/pacifik-empresa.webp');">
                     <a href="pacifik.html">
                         <div class="module-overlay">
                             <div class="module-info">
-                                <p class="module-category">YAP PACIFIK</p>
+                                <p class="module-category">YAP PACIFIK GROUP</p>
                                 <span class="module-plus">+</span>
                             </div>
                             <img loading="lazy" decoding="async" src="imgs/pacifik-logo.png" alt="Logo Pacifik" class="module-logo">
                         </div>
                     </a>
+                    <div class="module-caption">
+                        <img src="imgs/pacifik-logo.png" alt="" aria-hidden="true">
+                        <div><strong>YAP Pacifik Group</strong><span>Productos del mar</span></div>
+                    </div>
                 </div>
 
                 <div class="module-card" style="background-image: url('imgs/liquik-empresa.webp');">
                     <a href="liquik.html">
                         <div class="module-overlay">
                             <div class="module-info">
-                                <p class="module-category">YAP LIQUIK</p>
+                                <p class="module-category">YAP LIQUIK GROUP</p>
                                 <span class="module-plus">+</span>
                             </div>
                             <img loading="lazy" decoding="async" src="imgs/liquik-logo.png" alt="Logo Liquik" class="module-logo">
                         </div>
                     </a>
+                    <div class="module-caption">
+                        <img src="imgs/liquik-logo.png" alt="" aria-hidden="true">
+                        <div><strong>YAP Liquik Group</strong><span>Productos de limpieza industrial</span></div>
+                    </div>
                 </div>
 
             </div>
@@ -540,7 +566,7 @@
                                 alt="Yeimy Espino"></div>
                         <div class="worker-info-header">
                             <h4>YEIMY ESPINO</h4>
-                            <p data-i18n="job_ceo">Arquitecta Fundadora CEO</p>
+                            <p data-i18n="job_ceo">Arquitecta Fundadora | CEO</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -557,7 +583,7 @@
                                 alt="Ingrid Espino"></div>
                         <div class="worker-info-header">
                             <h4>INGRID ESPINO</h4>
-                            <p data-i18n="job_subgerencia">Sub Gerencia</p>
+                            <p data-i18n="job_subgerencia">Subgerente Corporativa</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -568,11 +594,11 @@
                         </div>
                     </div>
                     <div class="worker-card">
-                        <div class="worker-image-box"><img src="imgs/andre-briones-final.webp" class="worker-img"
+                        <div class="worker-image-box"><img src="imgs/piero-briones-final.webp" class="worker-img"
                                 alt="Piero Briones"></div>
                         <div class="worker-info-header">
                             <h4>PIERO BRIONES</h4>
-                            <p data-i18n="job_admin">Administración</p>
+                            <p data-i18n="job_admin">Jefe de Administración</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -583,11 +609,11 @@
                         </div>
                     </div>
                     <div class="worker-card">
-                        <div class="worker-image-box"><img src="imgs/piero-briones-final.webp" class="worker-img"
+                        <div class="worker-image-box"><img src="imgs/andre-briones-final.webp" class="worker-img"
                                 alt="Andre Briones"></div>
                         <div class="worker-info-header">
                             <h4>ANDRE BRIONES</h4>
-                            <p data-i18n="job_ops">Operaciones</p>
+                            <p data-i18n="job_ops">Jefe de Operaciones</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -610,7 +636,7 @@
                                 alt="Piero Briones"></div>
                         <div class="worker-info-header">
                             <h4>JORGE LUIS REVILLA</h4>
-                            <p data-i18n="job_finance">Finanzas Corporativa</p>
+                            <p data-i18n="job_finance">Gerente de Finanzas</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -625,7 +651,7 @@
                                 alt="Omar Moromizato"></div>
                         <div class="worker-info-header">
                             <h4>OMAR MOROMIZATO</h4>
-                            <p data-i18n="job_tech">Gerencia de Tecnología</p>
+                            <p data-i18n="job_tech">Gerente de Tecnología Corporativa</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -635,12 +661,28 @@
                         </div>
                     </div>
                     <div class="worker-card">
+                        <div class="worker-image-box worker-image-reference">
+                            <img src="imgs/oliver-escudero.webp?v=2" class="worker-img" alt="Oliver Escudero">
+                        </div>
+                        <div class="worker-info-header">
+                            <h4>OLIVER ESCUDERO</h4>
+                            <p data-i18n="job_accounting">Jefe de Contabilidad</p>
+                        </div>
+                        <div class="worker-footer">
+                            <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
+                            <div class="academic-logos">
+                                <img loading="lazy" decoding="async" src="logos/ULADECH.webp" alt="ULADECH">
+                                <img loading="lazy" decoding="async" src="logos/upao-nuevo.png" alt="UPAO">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="worker-card">
                         <div class="worker-image-box"><img src="imgs/adrian-cano-final.webp" class="worker-img"
                                 alt="Adrian Cano">
                         </div>
                         <div class="worker-info-header">
                             <h4>ADRIAN CANO</h4>
-                            <p data-i18n="job_ops_tech">Gerencia de Operaciones Técnicas</p>
+                            <p data-i18n="job_ops_tech">Jefe de Maquinarias y Equipos</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -660,7 +702,7 @@
                                 alt="Rene Balarezo"></div>
                         <div class="worker-info-header">
                             <h4>RENE BALAREZO</h4>
-                            <p data-i18n="job_legal">Legal Corporativo</p>
+                            <p data-i18n="job_legal">Gerente Legal Corporativo</p>
                         </div>
                         <div class="worker-footer">
                             <img loading="lazy" decoding="async" src="imgs/logo-horizontal-color.webp" class="brand-logo" alt="YAP Logo">
@@ -700,8 +742,82 @@
         </div>
     </section>
 
+    <!-- ==================== EMPLEOS ==================== -->
+    <section class="jobs-section" id="empleos">
+        <div class="jobs-container">
+            <div class="jobs-content reveal fade-right">
+                <p class="jobs-eyebrow" data-i18n="jobs_eyebrow">EMPLEOS</p>
+                <h2 class="jobs-title">
+                    <!-- <span data-i18n="jobs_title_prefix">Empleabilidad en</span> -->
+                    <img src="imgs/log-horizontal.png" class="jobs-brand-logo"
+                        alt="YAP Partners Corporation SAC" loading="lazy" decoding="async">
+                </h2>
+                <h3 class="jobs-subtitle" data-i18n="jobs_subtitle">Construye tu futuro con nosotros</h3>
+                <p data-i18n="jobs_intro">
+                    En YAP buscamos personas apasionadas por la excelencia, la innovación y el desarrollo de proyectos
+                    de alto impacto. Valoramos el talento, el compromiso y la capacidad de generar soluciones que
+                    contribuyan al crecimiento de nuestros clientes y de la organización.
+                </p>
+                <p data-i18n="jobs_invitation">
+                    Si deseas formar parte de un equipo multidisciplinario, desarrollar tu potencial profesional y
+                    asumir nuevos desafíos en un entorno dinámico y colaborativo, te invitamos a postular.
+                </p>
+                <!-- <a href="#formulario-empleos" class="jobs-cta" data-i18n="jobs_cta">Envíanos tu CV</a> -->
+            </div>
+
+            <div class="jobs-form-card reveal fade-left" id="formulario-empleos">
+                <h3 data-i18n="jobs_form_title">Envíanos tu CV</h3>
+                <p class="jobs-form-lead" data-i18n="jobs_form_lead">
+                    ¿Quieres formar parte de YAP? Nos gustaría conocer tu perfil.
+                </p>
+                <p class="jobs-form-description" data-i18n="jobs_form_description">
+                    Adjunta tu Currículum Vitae (CV) para que sea enviado a empleabilidad de YAP e ingresa en el
+                    asunto el puesto de tu interés. Tu información será incorporada a nuestra base de talentos y será
+                    considerada en los procesos de selección presentes y futuros.
+                </p>
+
+                <form action="https://formsubmit.co/empleabilidad@yapcorporation.com" method="post"
+                    enctype="multipart/form-data" class="main-form jobs-form"
+                    data-endpoint="empleabilidad@yapcorporation.com" data-form-type="jobs">
+                    <input type="hidden" name="_subject" value="Nueva postulación desde la web de YAP Partners">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="jobName" data-i18n="jobs_form_name">NOMBRE</label>
+                            <input type="text" id="jobName" name="nombre" autocomplete="given-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobLastName" data-i18n="jobs_form_lastname">APELLIDO</label>
+                            <input type="text" id="jobLastName" name="apellido" autocomplete="family-name" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="jobSubject" data-i18n="jobs_form_subject">ASUNTO / PUESTO DE INTERÉS</label>
+                        <input type="text" id="jobSubject" name="asunto" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="jobDescription" data-i18n="jobs_form_description_label">DESCRIPCIÓN</label>
+                        <textarea id="jobDescription" name="descripcion" required></textarea>
+                    </div>
+                    <div class="form-group full-width file-group">
+                        <label for="jobCv" data-i18n="jobs_form_file">CURRÍCULUM VITAE (CV)</label>
+                        <input type="file" id="jobCv" name="archivo_cv"
+                            accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            data-max-size="10485760" aria-describedby="jobCvHelp" required>
+                        <small id="jobCvHelp" data-i18n="jobs_form_file_help">Formatos admitidos: PDF, DOC o DOCX. Tamaño máximo: 10 MB.</small>
+                    </div>
+                    <button type="submit" class="btn-submit" data-i18n="jobs_form_submit">Envíanos tu CV</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+
+                <p class="jobs-closing" data-i18n="jobs_closing">
+                    ¡Esperamos contar contigo para seguir construyendo proyectos que generan valor e impacto!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== SLIDER PROYECTOS (VERSIÓN MOBILE) ==================== -->
-    <div id="proyectos"></div>
+    <div id="proyectos" class="section-anchor" aria-hidden="true"></div>
     <section class="proyectos-slider mod-mobile">
         <div class="slider-wrapper reveal fade-up">
             <div class="slider-viewport">
@@ -1114,7 +1230,7 @@
                 </div>
                 <div class="logo-divider"></div>
                 <div class="logo-item">
-                    <img loading="lazy" decoding="async" src="imgs/logo-toma-blanco.png" alt="Toma">
+                    <img loading="lazy" decoding="async" src="imgs/Logo_Toma-blanco-2.png" alt="Toma" style="max-width: 70%">
                 </div>
             </div>
             <p class="politicas-text" data-i18n="footer_privacy">Políticas de privacidad</p>
@@ -1129,8 +1245,8 @@
         <img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
-    <script src="translations.js?v=7" defer></script>
-    <script src="script.js?v=7" defer></script>
+    <script src="translations.js?v=10" defer></script>
+    <script src="script.js?v=10" defer></script>
 
 </body>
 

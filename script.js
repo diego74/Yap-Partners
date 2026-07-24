@@ -1,24 +1,89 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const contactForm = document.querySelector('.main-form');
+    // Reordena las tarjetas para mantener una sola fuente de contenido y
+    // reflejar la jerarquía corporativa vigente en todos los tamaños.
+    const teamSection = document.querySelector('.directiva-section');
+    if (teamSection) {
+        const rows = teamSection.querySelectorAll('.workers-row');
+        const cardsByName = new Map(
+            Array.from(teamSection.querySelectorAll('.worker-card')).map(card => [
+                card.querySelector('h4').textContent.trim(),
+                card
+            ])
+        );
+        const hierarchy = [
+            ['INGRID ESPINO', 'PIERO BRIONES', 'YEIMY ESPINO', 'ANDRE BRIONES', 'ADRIAN CANO'],
+            ['RENE BALAREZO', 'OMAR MOROMIZATO', 'OLIVER ESCUDERO', 'JORGE LUIS REVILLA'],
+            ['WILFREDO DE SOUZA', 'JORGE CARRILLO']
+        ];
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (event) => {
+        hierarchy.forEach((names, rowIndex) => {
+            if (!rows[rowIndex]) return;
+            names.forEach(name => {
+                const card = cardsByName.get(name);
+                if (card) rows[rowIndex].appendChild(card);
+            });
+        });
+    }
+
+    // Los enlaces que llegan desde otra página pueden resolverse antes de que
+    // imágenes, fuentes y tarjetas terminen de definir la altura del documento.
+    // Reafirma el destino después del cálculo inicial y al completar la carga.
+    function alignInitialHash() {
+        if (!window.location.hash) return;
+        const targetId = decodeURIComponent(window.location.hash.slice(1));
+        const target = document.getElementById(targetId);
+        if (target) target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    }
+
+    if (window.location.hash) {
+        requestAnimationFrame(() => requestAnimationFrame(alignInitialHash));
+        window.addEventListener('load', alignInitialHash, { once: true });
+        setTimeout(alignInitialHash, 2200);
+    }
+
+    const siteForms = document.querySelectorAll('.main-form');
+
+    siteForms.forEach(form => {
+        form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            if (!contactForm.reportValidity()) return;
+            if (!form.reportValidity()) return;
 
-            const formData = new FormData(contactForm);
-            const submitButton = contactForm.querySelector('.btn-submit');
-            const status = contactForm.querySelector('.form-status');
+            const fileInput = form.querySelector('input[type="file"][data-max-size]');
+            const status = form.querySelector('.form-status');
+            const isEnglish = document.documentElement.lang === 'en';
+
+            if (fileInput && fileInput.files[0] &&
+                fileInput.files[0].size > Number(fileInput.dataset.maxSize)) {
+                status.className = 'form-status error';
+                status.textContent = isEnglish
+                    ? 'The file exceeds the maximum allowed size of 10 MB.'
+                    : 'El archivo supera el tamaño máximo permitido de 10 MB.';
+                fileInput.focus();
+                return;
+            }
+
+            const subjectField = form.querySelector('[name="asunto"]');
+            const emailSubject = form.querySelector('[name="_subject"]');
+            if (subjectField && emailSubject) {
+                emailSubject.value = isEnglish
+                    ? `New application: ${subjectField.value.trim()}`
+                    : `Nueva postulación: ${subjectField.value.trim()}`;
+            }
+
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('.btn-submit');
             const originalButtonText = submitButton.textContent;
+            const endpoint = form.dataset.endpoint || 'contacto@yapcorporation.com';
+            const isJobsForm = form.dataset.formType === 'jobs';
 
             submitButton.disabled = true;
-            submitButton.textContent = 'ENVIANDO...';
+            submitButton.textContent = isEnglish ? 'SENDING...' : 'ENVIANDO...';
             status.className = 'form-status';
             status.textContent = '';
 
             try {
-                const response = await fetch('https://formsubmit.co/ajax/contacto@yapcorporation.com', {
+                const response = await fetch(`https://formsubmit.co/ajax/${endpoint}`, {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json'
@@ -31,19 +96,31 @@ document.addEventListener('DOMContentLoaded', function () {
                     throw new Error(result.message || 'No se pudo enviar el mensaje.');
                 }
 
-                contactForm.reset();
+                form.reset();
                 status.classList.add('success');
-                status.textContent = 'Mensaje enviado correctamente. Nos comunicaremos contigo pronto.';
+                status.textContent = isJobsForm
+                    ? (isEnglish
+                        ? 'Your application and CV were sent successfully.'
+                        : 'Tu postulación y CV fueron enviados correctamente.')
+                    : (isEnglish
+                        ? 'Message sent successfully. We will contact you soon.'
+                        : 'Mensaje enviado correctamente. Nos comunicaremos contigo pronto.');
             } catch (error) {
                 status.classList.add('error');
-                status.textContent = 'No pudimos enviar el mensaje. Inténtalo nuevamente en unos minutos.';
+                status.textContent = isJobsForm
+                    ? (isEnglish
+                        ? 'We could not send your application. Please try again in a few minutes.'
+                        : 'No pudimos enviar tu postulación. Inténtalo nuevamente en unos minutos.')
+                    : (isEnglish
+                        ? 'We could not send the message. Please try again in a few minutes.'
+                        : 'No pudimos enviar el mensaje. Inténtalo nuevamente en unos minutos.');
                 console.error('Error al enviar el formulario:', error);
             } finally {
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
             }
         });
-    }
+    });
 
     // ==========================================================
     // 1. NAVBAR — SCROLL (cambia color al bajar)
@@ -766,6 +843,137 @@ document.addEventListener('DOMContentLoaded', function () {
                 else if (e.key === 'ArrowRight') setActiveSlide(activeIndex + 1);
             });
         }
+    }
+
+    // ==========================================================
+    // 9. POP-UP PHOTO CAROUSEL FOR PROJECT GALLERIES
+    // ==========================================================
+    const projectGalleries = document.querySelectorAll('.project-feature');
+    if (projectGalleries.length) {
+        const modal = document.createElement('div');
+        modal.className = 'popup-carousel-modal';
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('aria-label', 'Galería de imágenes del proyecto');
+        modal.innerHTML = `
+            <button class="popup-carousel-close" aria-label="Cerrar">&times;</button>
+            <div class="popup-carousel-container">
+                <div class="popup-carousel-viewport">
+                    <img src="" alt="" class="popup-carousel-main-img">
+                    <button class="popup-carousel-arrow prev" aria-label="Anterior">&#10094;</button>
+                    <button class="popup-carousel-arrow next" aria-label="Siguiente">&#10095;</button>
+                </div>
+                <div class="popup-carousel-thumbnails"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        const mainImg = modal.querySelector('.popup-carousel-main-img');
+        const thumbnailsContainer = modal.querySelector('.popup-carousel-thumbnails');
+        const closeBtn = modal.querySelector('.popup-carousel-close');
+        const prevArrow = modal.querySelector('.popup-carousel-arrow.prev');
+        const nextArrow = modal.querySelector('.popup-carousel-arrow.next');
+        let slides = [];
+        let activeIndex = 0;
+        let lastFocusedElement = null;
+        let imageSwapTimer;
+
+        function setActiveProjectSlide(index) {
+            if (!slides.length) return;
+
+            activeIndex = (index + slides.length) % slides.length;
+            const slide = slides[activeIndex];
+            const thumbs = thumbnailsContainer.querySelectorAll('.popup-thumbnail-item');
+
+            mainImg.style.opacity = '0';
+            clearTimeout(imageSwapTimer);
+            imageSwapTimer = setTimeout(() => {
+                mainImg.src = slide.src;
+                mainImg.alt = slide.alt;
+                thumbs.forEach((thumb, thumbIndex) => {
+                    thumb.classList.toggle('active', thumbIndex === activeIndex);
+                });
+                mainImg.style.opacity = '1';
+            }, 200);
+        }
+
+        function openProjectGallery(gallerySlides, startIndex, trigger) {
+            slides = gallerySlides;
+            lastFocusedElement = trigger;
+            thumbnailsContainer.replaceChildren();
+
+            slides.forEach((slide, index) => {
+                const thumb = document.createElement('img');
+                thumb.src = slide.src;
+                thumb.alt = `Ver ${slide.alt}`;
+                thumb.className = 'popup-thumbnail-item';
+                thumb.loading = 'lazy';
+                thumb.decoding = 'async';
+                thumb.addEventListener('click', () => setActiveProjectSlide(index));
+                thumbnailsContainer.appendChild(thumb);
+            });
+
+            const hasMultipleSlides = slides.length > 1;
+            prevArrow.hidden = !hasMultipleSlides;
+            nextArrow.hidden = !hasMultipleSlides;
+            setActiveProjectSlide(startIndex);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+        }
+
+        function closeProjectGallery() {
+            modal.classList.remove('active');
+            const navContainer = document.getElementById('navContainer');
+            if (!navContainer || !navContainer.classList.contains('open')) {
+                document.body.style.overflow = '';
+            }
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }
+
+        projectGalleries.forEach(gallery => {
+            const cover = gallery.querySelector(':scope > img');
+            const galleryImages = Array.from(gallery.querySelectorAll('.project-gallery-strip img'));
+            const allImages = cover ? [cover, ...galleryImages] : galleryImages;
+            const gallerySlides = allImages.map(image => ({
+                src: image.currentSrc || image.src,
+                alt: image.alt
+            }));
+
+            galleryImages.forEach((image, index) => {
+                image.tabIndex = 0;
+                image.setAttribute('role', 'button');
+                image.setAttribute('aria-label', `Abrir galería en ${image.alt}`);
+
+                const openFromThumbnail = () => openProjectGallery(
+                    gallerySlides,
+                    cover ? index + 1 : index,
+                    image
+                );
+
+                image.addEventListener('click', openFromThumbnail);
+                image.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openFromThumbnail();
+                    }
+                });
+            });
+        });
+
+        closeBtn.addEventListener('click', closeProjectGallery);
+        modal.addEventListener('click', event => {
+            if (event.target === modal) closeProjectGallery();
+        });
+        prevArrow.addEventListener('click', () => setActiveProjectSlide(activeIndex - 1));
+        nextArrow.addEventListener('click', () => setActiveProjectSlide(activeIndex + 1));
+
+        document.addEventListener('keydown', event => {
+            if (!modal.classList.contains('active')) return;
+            if (event.key === 'Escape') closeProjectGallery();
+            else if (event.key === 'ArrowLeft') setActiveProjectSlide(activeIndex - 1);
+            else if (event.key === 'ArrowRight') setActiveProjectSlide(activeIndex + 1);
+        });
     }
 
 });
