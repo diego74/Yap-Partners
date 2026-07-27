@@ -78,6 +78,32 @@
     object-position: center center;
 }
 
+.project-feature-video {
+    position: relative;
+    align-self: center;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 995 / 576;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.project-feature-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.project-feature-video video.is-ready {
+    opacity: 1;
+}
+
 @media (min-width: 901px) {
     .project-feature {
         grid-template-columns: minmax(0, 1.32fr) minmax(300px, 0.68fr);
@@ -110,6 +136,30 @@
 .project-feature-copy p {
     color: var(--color-gray);
     line-height: 1.7;
+}
+
+.project-view-more {
+    align-self: flex-start;
+    margin-top: 18px;
+    padding: 12px 22px;
+    border: 1px solid var(--color-gold);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-navy);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-view-more:hover,
+.project-view-more:focus-visible {
+    background-color: var(--color-gold);
+    color: #ffffff;
+    transform: translateY(-2px);
+    outline: none;
 }
 
 .project-gallery-strip {
@@ -163,8 +213,11 @@
 @media (max-width: 600px) {
     .project-feature>img {
         height: auto;
-        min-height: 0;
         max-height: none;
+    }
+
+    .project-feature>img {
+        min-height: 0;
         object-fit: contain;
     }
 
@@ -430,17 +483,9 @@ body:not([class]) > .navbar {
     line-height: 1.25;
 }
 
-.directiva-section .group-wrapper:nth-child(1) .worker-card {
+.directiva-section .group-wrapper .worker-card {
     width: calc(20% - 20px);
     min-width: 205px;
-}
-
-.directiva-section .group-wrapper:nth-child(2) .worker-card {
-    width: calc(25% - 20px);
-}
-
-.directiva-section .group-wrapper:nth-child(3) .worker-card {
-    width: calc(33.333% - 20px);
 }
 
 .worker-image-reference {
@@ -1007,7 +1052,7 @@ body {
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 40px;
-    color: #e0e0e0;
+    color: #ffffff;
     max-width: 600px;
     font-weight: 700;
 }
@@ -1617,7 +1662,7 @@ body {
 }
 
 .group-wrapper {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .section-subtitle {
@@ -2294,6 +2339,18 @@ body {
 }
 
 /* ==================== EMPLEOS ==================== */
+.jobs-page {
+    background: #111c35;
+}
+
+.jobs-page .jobs-section {
+    min-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 70px;
+    display: flex;
+    align-items: center;
+}
+
 .jobs-section {
     width: 100%;
     padding: 34px 4%;
@@ -2581,6 +2638,12 @@ body {
 }
 
 @media (max-width: 900px) {
+    .jobs-page .jobs-section {
+        padding-top: 125px;
+        padding-bottom: 55px;
+        align-items: flex-start;
+    }
+
     .jobs-section {
         padding: 42px 6%;
     }
@@ -2596,6 +2659,11 @@ body {
 }
 
 @media (max-width: 600px) {
+    .jobs-page .jobs-section {
+        padding-top: 110px;
+        padding-bottom: 44px;
+    }
+
     .jobs-section {
         padding: 36px 5%;
     }
@@ -3472,12 +3540,18 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.popup-carousel-main-img {
+.popup-carousel-main-img,
+.popup-carousel-main-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.25s ease-in-out;
+}
+
+.popup-carousel-main-video {
+    display: block;
+    background: #000;
 }
 
 .popup-carousel-caption {
@@ -3598,6 +3672,10 @@ body {
     border-color: var(--color-gold);
     box-shadow: 0 8px 20px rgba(201, 167, 76, 0.3);
     transform: translateY(-2px);
+}
+
+.popup-thumbnail-item.is-video {
+    border-color: rgba(201, 167, 76, 0.65);
 }
 
 /* Responsive adjustments */

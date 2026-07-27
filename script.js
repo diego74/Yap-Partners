@@ -712,34 +712,95 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const carouselsData = {
                 motor: [
+                    {
+                        type: 'video',
+                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646055/yap-motor-video_i2d5kr.mp4',
+                        poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646055/yap-motor-video_i2d5kr.jpg'
+                    },
                     'imgs/motors-01.webp',
                     'imgs/motors-02.webp',
                     'imgs/motors-03.webp',
                     'imgs/motors-04.webp',
                 ],
                 animal: [
-                    'https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=80'
+                    {
+                        type: 'video',
+                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646049/yap-animal-video_reqpoe.mp4',
+                        poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646049/yap-animal-video_reqpoe.jpg'
+                    },
+                    'imgs/animal-01.png',
+                    'imgs/animal-02.png',
+                    'imgs/animal-03.png',
+                    'imgs/animal-04.png',
+                    'imgs/animal-05.png',
+                    'imgs/animal-06.png',
+                    'imgs/animal-07.png'
                 ],
                 organik: [
-                    'https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=80'
+                    {
+                        type: 'video',
+                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646045/yap-organik-video_de1tar.mp4',
+                        poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646045/yap-organik-video_de1tar.jpg'
+                    },
+                    'imgs/organik-00.png',
+                    'imgs/organik-01.png',
+                    'imgs/organik-02.png',
+                    'imgs/organik-03.png',
+                    'imgs/organik-04.png',
+                    'imgs/organik-05.png',
+                    'imgs/organik-06.png',
+                    'imgs/organik-07.png',
+                    'imgs/organik-08.png',
+                    'imgs/organik-09.png',
+                    'imgs/organik-10.png',
+                    'imgs/organik-11.png',
+                    'imgs/organik-12.png',
+                    'imgs/organik-13.png',
+                    'imgs/organik-14.png'
                 ],
                 pacifik: [
-                    'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'
+                    {
+                        type: 'video',
+                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783647187/yap-pacifik-video-web_xi8noh.mp4',
+                        poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783647187/yap-pacifik-video-web_xi8noh.jpg'
+                    },
+                    'imgs/pacifik-02.png',
+                    'imgs/pacifik-03.png',
+                    'imgs/pacifik-04.png',
+                    'imgs/pacifik-05.png',
+                    'imgs/pacifik-06.png',
+                    'imgs/pacifik-07.png',
+                    'imgs/pacifik-08.png',
+                    'imgs/pacifik-09.png',
+                    'imgs/pacifik-10.png',
+                    'imgs/pacifik-11.png'
                 ],
                 liquik: [
-                    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80'
+                    {
+                        type: 'video',
+                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646076/yap-liquik-video_l0y5b3.mp4',
+                        poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646076/yap-liquik-video_l0y5b3.jpg'
+                    },
+                    'imgs/liquik-02.png',
+                    'imgs/liquik-03.png',
+                    'imgs/liquik-04.png',
+                    'imgs/liquik-05.png',
+                    'imgs/liquik-06.png',
+                    'imgs/liquik-07.png',
+                    'imgs/liquik-08.png',
+                    'imgs/liquik-09.png',
+                    'imgs/liquik-10.png',
+                    'imgs/liquik-11.png',
+                    'imgs/liquik-12.png',
+                    'imgs/liquik-13.png',
+                    'imgs/liquik-14.png',
+                    'imgs/liquik-15.png',
+                    'imgs/liquik-16.png',
+                    'imgs/liquik-17.png',
+                    'imgs/liquik-18.png',
+                    'imgs/liquik-19.png',
+                    'imgs/liquik-20.png',
+                    'imgs/liquik-21.png'
                 ]
             };
 
@@ -754,6 +815,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="popup-carousel-container">
                     <div class="popup-carousel-viewport">
                         <img src="" alt="Popup Image" class="popup-carousel-main-img">
+                        <video autoplay controls playsinline preload="metadata" class="popup-carousel-main-video" hidden></video>
                         <button class="popup-carousel-arrow prev" aria-label="Anterior">&#10094;</button>
                         <button class="popup-carousel-arrow next" aria-label="Siguiente">&#10095;</button>
                     </div>
@@ -763,6 +825,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.appendChild(modal);
 
             const mainImg = modal.querySelector('.popup-carousel-main-img');
+            const mainVideo = modal.querySelector('.popup-carousel-main-video');
             const thumbnailsContainer = modal.querySelector('.popup-carousel-thumbnails');
             const closeBtn = modal.querySelector('.popup-carousel-close');
             const prevArrow = modal.querySelector('.popup-carousel-arrow.prev');
@@ -771,9 +834,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             slides.forEach((slide, idx) => {
                 const thumb = document.createElement('img');
-                thumb.dataset.src = slide;
+                thumb.dataset.src = typeof slide === 'string' ? slide : slide.poster;
                 thumb.className = 'popup-thumbnail-item';
-                thumb.alt = `Thumbnail ${idx + 1}`;
+                thumb.alt = slide.type === 'video' ? 'Video YAP Animal' : `Imagen ${idx + 1}`;
                 thumb.loading = 'lazy';
                 thumb.decoding = 'async';
                 thumb.addEventListener('click', () => {
@@ -793,19 +856,36 @@ document.addEventListener('DOMContentLoaded', function () {
             function setActiveSlide(index) {
                 activeIndex = (index + slides.length) % slides.length;
                 const slide = slides[activeIndex];
+                const isVideo = typeof slide === 'object' && slide.type === 'video';
 
-
+                mainVideo.pause();
                 mainImg.style.opacity = '0';
+                mainVideo.style.opacity = '0';
 
                 setTimeout(() => {
-                    mainImg.src = slide;
+                    if (isVideo) {
+                        mainImg.hidden = true;
+                        mainVideo.hidden = false;
+                        mainVideo.src = slide.src;
+                        mainVideo.poster = slide.poster;
+                        mainVideo.muted = false;
+                        mainVideo.style.opacity = '1';
+                        mainVideo.play().catch(() => {
+                            // El navegador puede bloquear el autoplay; los controles siguen disponibles.
+                        });
+                    } else {
+                        mainVideo.hidden = true;
+                        mainVideo.removeAttribute('src');
+                        mainVideo.load();
+                        mainImg.hidden = false;
+                        mainImg.src = slide;
+                        mainImg.style.opacity = '1';
+                    }
 
 
                     thumbs.forEach((t, i) => {
                         t.classList.toggle('active', i === activeIndex);
                     });
-
-                    mainImg.style.opacity = '1';
                 }, 200);
             }
 
@@ -818,6 +898,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             function closeModal() {
+                mainVideo.pause();
                 modal.classList.remove('active');
                 const navContainer = document.getElementById('navContainer');
                 if (!navContainer || !navContainer.classList.contains('open')) {
@@ -848,6 +929,68 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==========================================================
     // 9. POP-UP PHOTO CAROUSEL FOR PROJECT GALLERIES
     // ==========================================================
+    const projectVideos = Array.from(document.querySelectorAll('.project-feature-video video'));
+    let activeProjectVideo = null;
+    if (projectVideos.length) {
+        const visibilityByVideo = new Map(projectVideos.map(video => [video, 0]));
+
+        const setActiveProjectVideo = videoToPlay => {
+            if (videoToPlay === activeProjectVideo) return;
+
+            projectVideos.forEach(video => {
+                if (video === videoToPlay) return;
+                video.pause();
+                video.classList.remove('is-ready');
+            });
+
+            activeProjectVideo = videoToPlay;
+            if (!activeProjectVideo) return;
+
+            const revealAndPlay = () => {
+                if (activeProjectVideo !== videoToPlay) return;
+                videoToPlay.classList.add('is-ready');
+                videoToPlay.play().catch(() => {
+                    videoToPlay.classList.remove('is-ready');
+                });
+            };
+
+            if (videoToPlay.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+                revealAndPlay();
+            } else {
+                videoToPlay.addEventListener('loadeddata', revealAndPlay, { once: true });
+                videoToPlay.load();
+            }
+        };
+
+        const focusObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                visibilityByVideo.set(entry.target, entry.intersectionRatio);
+            });
+
+            const mostVisibleVideo = projectVideos.reduce((bestVideo, video) => (
+                visibilityByVideo.get(video) > visibilityByVideo.get(bestVideo) ? video : bestVideo
+            ), projectVideos[0]);
+
+            setActiveProjectVideo(
+                visibilityByVideo.get(mostVisibleVideo) >= 0.35 ? mostVisibleVideo : null
+            );
+        }, {
+            threshold: [0, 0.35, 0.5, 0.75, 1]
+        });
+
+        projectVideos.forEach(video => focusObserver.observe(video));
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                projectVideos.forEach(video => video.pause());
+            } else if (activeProjectVideo) {
+                activeProjectVideo.play().catch(() => {
+                    activeProjectVideo.classList.remove('is-ready');
+                });
+            }
+        });
+    }
+
     const projectGalleries = document.querySelectorAll('.project-feature');
     if (projectGalleries.length) {
         const modal = document.createElement('div');
@@ -860,6 +1003,8 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="popup-carousel-container">
                 <div class="popup-carousel-viewport">
                     <img src="" alt="" class="popup-carousel-main-img">
+                    <video controls muted playsinline preload="metadata"
+                        class="popup-carousel-main-video" hidden></video>
                     <button class="popup-carousel-arrow prev" aria-label="Anterior">&#10094;</button>
                     <button class="popup-carousel-arrow next" aria-label="Siguiente">&#10095;</button>
                 </div>
@@ -869,6 +1014,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(modal);
 
         const mainImg = modal.querySelector('.popup-carousel-main-img');
+        const mainVideo = modal.querySelector('.popup-carousel-main-video');
         const thumbnailsContainer = modal.querySelector('.popup-carousel-thumbnails');
         const closeBtn = modal.querySelector('.popup-carousel-close');
         const prevArrow = modal.querySelector('.popup-carousel-arrow.prev');
@@ -886,14 +1032,32 @@ document.addEventListener('DOMContentLoaded', function () {
             const thumbs = thumbnailsContainer.querySelectorAll('.popup-thumbnail-item');
 
             mainImg.style.opacity = '0';
+            mainVideo.style.opacity = '0';
+            mainVideo.pause();
             clearTimeout(imageSwapTimer);
             imageSwapTimer = setTimeout(() => {
-                mainImg.src = slide.src;
-                mainImg.alt = slide.alt;
+                const isVideo = slide.type === 'video';
+
+                mainImg.hidden = isVideo;
+                mainVideo.hidden = !isVideo;
+
+                if (isVideo) {
+                    mainVideo.poster = slide.poster;
+                    if (mainVideo.getAttribute('src') !== slide.src) {
+                        mainVideo.src = slide.src;
+                    }
+                    mainVideo.setAttribute('aria-label', slide.alt);
+                    mainVideo.style.opacity = '1';
+                    mainVideo.play().catch(() => {});
+                } else {
+                    mainImg.src = slide.src;
+                    mainImg.alt = slide.alt;
+                    mainImg.style.opacity = '1';
+                }
+
                 thumbs.forEach((thumb, thumbIndex) => {
                     thumb.classList.toggle('active', thumbIndex === activeIndex);
                 });
-                mainImg.style.opacity = '1';
             }, 200);
         }
 
@@ -904,9 +1068,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             slides.forEach((slide, index) => {
                 const thumb = document.createElement('img');
-                thumb.src = slide.src;
+                thumb.src = slide.type === 'video' ? slide.poster : slide.src;
                 thumb.alt = `Ver ${slide.alt}`;
                 thumb.className = 'popup-thumbnail-item';
+                if (slide.type === 'video') thumb.classList.add('is-video');
                 thumb.loading = 'lazy';
                 thumb.decoding = 'async';
                 thumb.addEventListener('click', () => setActiveProjectSlide(index));
@@ -916,29 +1081,63 @@ document.addEventListener('DOMContentLoaded', function () {
             const hasMultipleSlides = slides.length > 1;
             prevArrow.hidden = !hasMultipleSlides;
             nextArrow.hidden = !hasMultipleSlides;
-            setActiveProjectSlide(startIndex);
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            projectVideos.forEach(video => video.pause());
+            setActiveProjectSlide(startIndex);
             closeBtn.focus();
         }
 
         function closeProjectGallery() {
             modal.classList.remove('active');
+            mainVideo.pause();
+            clearTimeout(imageSwapTimer);
             const navContainer = document.getElementById('navContainer');
             if (!navContainer || !navContainer.classList.contains('open')) {
                 document.body.style.overflow = '';
+            }
+            if (activeProjectVideo) {
+                activeProjectVideo.play().catch(() => {
+                    activeProjectVideo.classList.remove('is-ready');
+                });
             }
             if (lastFocusedElement) lastFocusedElement.focus();
         }
 
         projectGalleries.forEach(gallery => {
-            const cover = gallery.querySelector(':scope > img');
+            const projectVideo = gallery.querySelector('.project-feature-video video');
             const galleryImages = Array.from(gallery.querySelectorAll('.project-gallery-strip img'));
-            const allImages = cover ? [cover, ...galleryImages] : galleryImages;
-            const gallerySlides = allImages.map(image => ({
+            const gallerySlides = [];
+
+            if (projectVideo) {
+                gallerySlides.push({
+                    type: 'video',
+                    src: projectVideo.querySelector('source')?.src || projectVideo.currentSrc,
+                    poster: projectVideo.poster,
+                    alt: projectVideo.getAttribute('aria-label') || 'Video del proyecto'
+                });
+                gallerySlides.push({
+                    type: 'image',
+                    src: projectVideo.poster,
+                    alt: projectVideo.getAttribute('aria-label')?.replace('Video de', 'Imagen principal de')
+                        || 'Imagen principal del proyecto'
+                });
+            }
+
+            gallerySlides.push(...galleryImages.map(image => ({
+                type: 'image',
                 src: image.currentSrc || image.src,
                 alt: image.alt
-            }));
+            })));
+
+            const viewMoreButton = gallery.querySelector('.project-view-more');
+            if (viewMoreButton) {
+                const projectName = gallery.querySelector('h2')?.textContent.trim() || 'el proyecto';
+                viewMoreButton.setAttribute('aria-label', `Ver galería de ${projectName}`);
+                viewMoreButton.addEventListener('click', () => {
+                    openProjectGallery(gallerySlides, 0, viewMoreButton);
+                });
+            }
 
             galleryImages.forEach((image, index) => {
                 image.tabIndex = 0;
@@ -947,7 +1146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const openFromThumbnail = () => openProjectGallery(
                     gallerySlides,
-                    cover ? index + 1 : index,
+                    projectVideo ? index + 2 : index,
                     image
                 );
 
