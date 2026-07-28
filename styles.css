@@ -2086,6 +2086,10 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 5px;
     transition: border-color 0.3s;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .link-more:hover {
@@ -2304,6 +2308,13 @@ body {
         padding: 30px 25px;
         padding-top: 10px;
         padding-bottom: 34px;
+    }
+
+    .link-more {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        margin-bottom: -12px;
     }
 
     .nav-arrows {

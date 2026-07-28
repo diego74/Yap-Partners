@@ -261,6 +261,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Mantiene la navegación de los CTA del carrusel aunque una capa táctil
+    // del slider interfiera con la acción predeterminada del enlace en mobile.
+    document.querySelectorAll('.proyectos-slider .link-more').forEach(link => {
+        link.addEventListener('click', event => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            window.location.assign(link.href);
+        });
+    });
+
     // ==========================================================
     // 3.1 CARRUSEL DE VALORES (mobile)
     // ==========================================================
