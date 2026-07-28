@@ -2,3 +2,5 @@
 videos/*.mp4
 .vscode/
 .agents/
+.well-known/
+nc_assets/
