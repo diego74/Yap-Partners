@@ -476,6 +476,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const modulesTrack = document.getElementById('modulesTrack');
     const modulesContainer = document.querySelector('.modules-container');
 
+    function getModulesMaxScroll() {
+        if (!modulesTrack || !modulesContainer) return 0;
+
+        const containerStyles = window.getComputedStyle(modulesContainer);
+        const horizontalPadding = parseFloat(containerStyles.paddingLeft) + parseFloat(containerStyles.paddingRight);
+        const visibleContentWidth = modulesContainer.clientWidth - horizontalPadding;
+
+        return Math.max(0, modulesTrack.scrollWidth - visibleContentWidth);
+    }
+
     if (modulesTrack && modulesContainer) {
         let isDragging = false;
         let startX, originX;
@@ -499,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!isDragging) return;
             e.preventDefault();
             const x = (e.pageX !== undefined ? e.pageX : e.touches[0].pageX) - modulesTrack.offsetLeft;
-            const maxScroll = -(modulesTrack.scrollWidth - modulesContainer.offsetWidth);
+            const maxScroll = -getModulesMaxScroll();
             const targetX = Math.min(0, Math.max(originX + (x - startX), maxScroll));
             modulesTrack.style.transform = `translateX(${targetX}px)`;
         }
@@ -567,7 +577,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function goToModule(index) {
             moduleIndex = (index + moduleCards.length) % moduleCards.length;
-            const maxScroll = Math.max(0, modulesTrack.scrollWidth - modulesContainer.clientWidth);
+            const maxScroll = getModulesMaxScroll();
             const targetX = Math.min(moduleCards[moduleIndex].offsetLeft, maxScroll);
             modulesTrack.style.transform = `translateX(-${targetX}px)`;
             setActiveMobileDot(moduleControls.dotButtons, moduleIndex);
