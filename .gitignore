@@ -1,5 +1,5 @@
 **/.DS_Store
-videos/*.mp4
+/videos/
 .vscode/
 .agents/
 .well-known/

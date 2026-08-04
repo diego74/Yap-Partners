@@ -734,7 +734,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 motor: [
                     {
                         type: 'video',
-                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646055/yap-motor-video_i2d5kr.mp4',
+                        src: 'videos/yap-motor.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646055/yap-motor-video_i2d5kr.jpg'
                     },
                     'imgs/motors-01.webp',
@@ -745,7 +745,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 animal: [
                     {
                         type: 'video',
-                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646049/yap-animal-video_reqpoe.mp4',
+                        src: 'videos/yap-animal.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646049/yap-animal-video_reqpoe.jpg'
                     },
                     'imgs/animal-01.png',
@@ -759,7 +759,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 organik: [
                     {
                         type: 'video',
-                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646045/yap-organik-video_de1tar.mp4',
+                        src: 'videos/yap-organik.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646045/yap-organik-video_de1tar.jpg'
                     },
                     'imgs/organik-00.png',
@@ -781,7 +781,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 pacifik: [
                     {
                         type: 'video',
-                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783647187/yap-pacifik-video-web_xi8noh.mp4',
+                        src: 'videos/yap-pacifik.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783647187/yap-pacifik-video-web_xi8noh.jpg'
                     },
                     'imgs/pacifik-02.png',
@@ -798,7 +798,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 liquik: [
                     {
                         type: 'video',
-                        src: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_auto,q_auto:eco,ac_none,w_800/v1783646076/yap-liquik-video_l0y5b3.mp4',
+                        src: 'videos/yap-liquik.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646076/yap-liquik-video_l0y5b3.jpg'
                     },
                     'imgs/liquik-02.png',
@@ -889,6 +889,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         mainVideo.src = slide.src;
                         mainVideo.poster = slide.poster;
                         mainVideo.muted = false;
+                        mainVideo.volume = 0.7;
                         mainVideo.style.opacity = '1';
                         mainVideo.play().catch(() => {
                             // El navegador puede bloquear el autoplay; los controles siguen disponibles.
@@ -1023,7 +1024,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="popup-carousel-container">
                 <div class="popup-carousel-viewport">
                     <img src="" alt="" class="popup-carousel-main-img">
-                    <video controls muted playsinline preload="metadata"
+                    <video controls playsinline preload="metadata"
                         class="popup-carousel-main-video" hidden></video>
                     <button class="popup-carousel-arrow prev" aria-label="Anterior">&#10094;</button>
                     <button class="popup-carousel-arrow next" aria-label="Siguiente">&#10095;</button>
@@ -1066,6 +1067,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (mainVideo.getAttribute('src') !== slide.src) {
                         mainVideo.src = slide.src;
                     }
+                    mainVideo.muted = false;
+                    mainVideo.defaultMuted = false;
+                    mainVideo.volume = 0.7;
                     mainVideo.setAttribute('aria-label', slide.alt);
                     mainVideo.style.opacity = '1';
                     mainVideo.play().catch(() => {});
