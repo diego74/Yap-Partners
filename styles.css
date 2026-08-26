@@ -4,6 +4,7 @@
     --color-navy-light: #394c74;
     --color-gold: #c9a74c;
     --color-gold-dark: #b08d36;
+    --color-gold-on-light: #8a691b;
     --color-dark: #1a1a1a;
     --color-gray: #555555;
     --color-light-bg: #f6f6f6;
@@ -118,7 +119,7 @@
 }
 
 .project-feature-copy span {
-    color: var(--color-gold);
+    color: var(--color-gold-on-light);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1068,9 +1069,10 @@ body {
 }
 
 .btn-hero-primary {
-    background-color: transparent;
+    background-color: rgba(27, 42, 74, 0.42);
     font-size: 12px;
-    border: 0.5px solid #ffffff;
+    font-weight: 700;
+    border: 1.5px solid #ffffff;
     padding: 18px 25px;
     text-decoration: none;
     color: #ffffff;
@@ -1080,14 +1082,15 @@ body {
 }
 
 .btn-hero-primary:hover {
-    background-color: var(--color-gold);
-    border-color: var(--color-gold);
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold-dark);
 }
 
 .btn-hero-secondary {
-    background-color: transparent;
+    background-color: rgba(27, 42, 74, 0.42);
     font-size: 12px;
-    border: 0.5px solid #ffffff;
+    font-weight: 500;
+    border: 1.5px solid #ffffff;
     padding: 18px 25px;
     text-decoration: none;
     color: #ffffff;
@@ -1097,8 +1100,8 @@ body {
 }
 
 .btn-hero-secondary:hover {
-    background-color: var(--color-gold);
-    border-color: var(--color-gold);
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold-dark);
 }
 
 .hero-reviews {
@@ -1234,7 +1237,7 @@ body {
 .carousel-subtitle {
     font-size: 11px;
     letter-spacing: 3px;
-    color: var(--color-gold);
+    color: var(--color-gold-on-light);
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -1471,7 +1474,7 @@ body {
 .services-tagline {
     font-size: 11px;
     letter-spacing: 3px;
-    color: var(--color-gold);
+    color: var(--color-gold-on-light);
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -1670,7 +1673,7 @@ body {
 }
 
 .section-subtitle {
-    color: var(--color-gold);
+    color: var(--color-gold-on-light);
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 3px;
@@ -2387,7 +2390,7 @@ body {
 
 .jobs-eyebrow {
     margin-bottom: 8px;
-    color: var(--color-gold);
+    color: var(--color-gold-on-light);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 3px;
@@ -2417,7 +2420,7 @@ body {
 
 .jobs-subtitle {
     margin-bottom: 12px;
-    color: var(--color-gold);
+    color: var(--color-gold-on-light);
     font-size: clamp(18px, 1.7vw, 23px);
     font-weight: 500;
 }
@@ -3237,7 +3240,7 @@ body {
 .values-tagline {
     font-size: 11px;
     letter-spacing: 3px;
-    color: var(--color-gold);
+    color: var(--color-gold-on-light);
     text-transform: uppercase;
     margin-bottom: 15px;
 }

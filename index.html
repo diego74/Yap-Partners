@@ -4,10 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YAP Partners es un holding empresarial multisectorial que desarrolla y gestiona proyectos estratégicos de alto impacto desde Lima, Perú.">
+    <link rel="canonical" href="https://yapcorporation.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yapcorporation.com/">
+    <meta property="og:title" content="YAP Partners | Holding empresarial multisectorial">
+    <meta property="og:description" content="Desarrollamos y gestionamos proyectos estratégicos de alto impacto desde Lima, Perú.">
+    <meta property="og:image" content="https://yapcorporation.com/imgs/logo-color.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YAP Partners | Holding empresarial multisectorial">
+    <meta name="twitter:description" content="Desarrollamos y gestionamos proyectos estratégicos de alto impacto desde Lima, Perú.">
+    <meta name="twitter:image" content="https://yapcorporation.com/imgs/logo-color.webp">
     <link rel="icon" href="imgs/logo-web.png" type="image/png">
     <link rel="preload" href="imgs/logo-color.webp" as="image" type="image/webp" fetchpriority="high">
     <title>YAP Partners | Lima - Perú</title>
     <link rel="stylesheet" href="styles.css?v=15">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"YAP Partners","url":"https://yapcorporation.com/","logo":"https://yapcorporation.com/imgs/logo-color.webp","email":"contacto@yapcorporation.com","telephone":"+51 978 777 703","address":{"@type":"PostalAddress","addressLocality":"Lima","addressCountry":"PE"}}
+    </script>
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +73,7 @@
     <!-- ==================== HERO ==================== -->
     <section class="hero-general">
         <div class="hero-video-container">
-            <video autoplay muted loop playsinline preload="metadata" class="hero-video">
+            <video autoplay muted loop playsinline preload="metadata" class="hero-video" poster="imgs/hero-video-poster.webp">
                 <source src="videos/VIDEO_PORTADA.mp4" type="video/mp4">
             </video>
         </div>
@@ -319,8 +333,8 @@
 
             </div>
 
-            <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
-            <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+            <button class="carousel-btn prev" id="prevBtn" type="button" aria-label="Diapositiva anterior">&#10094;</button>
+            <button class="carousel-btn next" id="nextBtn" type="button" aria-label="Diapositiva siguiente">&#10095;</button>
         </div>
     </section>
 
@@ -404,7 +418,7 @@
                                 <p class="module-category">YAP MOTOR GROUP</p>
                                 <span class="module-plus">+</span>
                             </div>
-                            <img loading="lazy" decoding="async" src="imgs/motor-logo-1.png" alt="Logo Motor" class="module-logo">
+                            <img loading="lazy" decoding="async" src="imgs/motor-logo-1.png" alt="Logo YAP Motor Group" class="module-logo">
                         </div>
                     </a>
                     <div class="module-caption">
@@ -632,7 +646,7 @@
                 <div class="workers-row row-4">
                     <div class="worker-card">
                         <div class="worker-image-box"><img src="imgs/jose-luis-final.webp" class="worker-img"
-                                alt="Piero Briones"></div>
+                                alt="Jorge Luis Revilla"></div>
                         <div class="worker-info-header">
                             <h4>JORGE LUIS REVILLA</h4>
                             <p data-i18n="job_finance">Gerente de Finanzas</p>
@@ -1109,22 +1123,22 @@
                     class="main-form">
                     <input type="hidden" name="_subject" value="Nueva consulta desde la web de YAP Partners">
                     <div class="form-group full-width">
-                        <label data-i18n="form_name">NOMBRE COMPLETO</label>
-                        <input type="text" name="nombre" placeholder="" required>
+                        <label for="contactName" data-i18n="form_name">NOMBRE COMPLETO</label>
+                        <input type="text" id="contactName" name="nombre" placeholder="" required>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label data-i18n="form_email">CORREO ELECTRÓNICO</label>
-                            <input type="email" name="correo" placeholder="" required>
+                            <label for="contactEmail" data-i18n="form_email">CORREO ELECTRÓNICO</label>
+                            <input type="email" id="contactEmail" name="correo" placeholder="" required>
                         </div>
                         <div class="form-group">
-                            <label data-i18n="form_phone">TELÉFONO</label>
-                            <input type="tel" name="telefono" placeholder="">
+                            <label for="contactPhone" data-i18n="form_phone">TELÉFONO</label>
+                            <input type="tel" id="contactPhone" name="telefono" placeholder="">
                         </div>
                     </div>
                     <div class="form-group full-width">
-                        <label data-i18n="form_message">MENSAJE</label>
-                        <textarea name="mensaje" placeholder="" required></textarea>
+                        <label for="contactMessage" data-i18n="form_message">MENSAJE</label>
+                        <textarea id="contactMessage" name="mensaje" placeholder="" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit" data-i18n="form_submit">ENVIAR MENSAJE</button>
                     <p class="form-status" role="status" aria-live="polite"></p>

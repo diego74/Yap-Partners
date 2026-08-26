@@ -733,6 +733,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const carouselsData = {
                 motor: [
                     {
+                        alt: 'YAP Motor',
                         type: 'video',
                         src: 'videos/yap-motor.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646055/yap-motor-video_i2d5kr.jpg'
@@ -744,83 +745,87 @@ document.addEventListener('DOMContentLoaded', function () {
                 ],
                 animal: [
                     {
+                        alt: 'YAP Animal',
                         type: 'video',
                         src: 'videos/yap-animal.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646049/yap-animal-video_reqpoe.jpg'
                     },
-                    'imgs/animal-01.png',
-                    'imgs/animal-02.png',
-                    'imgs/animal-03.png',
-                    'imgs/animal-04.png',
-                    'imgs/animal-05.png',
-                    'imgs/animal-06.png',
-                    'imgs/animal-07.png'
+                    'imgs/animal-01.webp',
+                    'imgs/animal-02.webp',
+                    'imgs/animal-03.webp',
+                    'imgs/animal-04.webp',
+                    'imgs/animal-05.webp',
+                    'imgs/animal-06.webp',
+                    'imgs/animal-07.webp'
                 ],
                 organik: [
                     {
+                        alt: 'YAP Organik',
                         type: 'video',
                         src: 'videos/yap-organik.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646045/yap-organik-video_de1tar.jpg'
                     },
-                    'imgs/organik-00.png',
-                    'imgs/organik-01.png',
-                    'imgs/organik-02.png',
-                    'imgs/organik-03.png',
-                    'imgs/organik-04.png',
-                    'imgs/organik-05.png',
-                    'imgs/organik-06.png',
-                    'imgs/organik-07.png',
-                    'imgs/organik-08.png',
-                    'imgs/organik-09.png',
-                    'imgs/organik-10.png',
-                    'imgs/organik-11.png',
-                    'imgs/organik-12.png',
-                    'imgs/organik-13.png',
-                    'imgs/organik-14.png'
+                    'imgs/organik-00.webp',
+                    'imgs/organik-01.webp',
+                    'imgs/organik-02.webp',
+                    'imgs/organik-03.webp',
+                    'imgs/organik-04.webp',
+                    'imgs/organik-05.webp',
+                    'imgs/organik-06.webp',
+                    'imgs/organik-07.webp',
+                    'imgs/organik-08.webp',
+                    'imgs/organik-09.webp',
+                    'imgs/organik-10.webp',
+                    'imgs/organik-11.webp',
+                    'imgs/organik-12.webp',
+                    'imgs/organik-13.webp',
+                    'imgs/organik-14.webp'
                 ],
                 pacifik: [
                     {
+                        alt: 'YAP Pacifik',
                         type: 'video',
                         src: 'videos/yap-pacifik.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783647187/yap-pacifik-video-web_xi8noh.jpg'
                     },
-                    'imgs/pacifik-02.png',
-                    'imgs/pacifik-03.png',
-                    'imgs/pacifik-04.png',
-                    'imgs/pacifik-05.png',
-                    'imgs/pacifik-06.png',
-                    'imgs/pacifik-07.png',
-                    'imgs/pacifik-08.png',
-                    'imgs/pacifik-09.png',
-                    'imgs/pacifik-10.png',
-                    'imgs/pacifik-11.png'
+                    'imgs/pacifik-02.webp',
+                    'imgs/pacifik-03.webp',
+                    'imgs/pacifik-04.webp',
+                    'imgs/pacifik-05.webp',
+                    'imgs/pacifik-06.webp',
+                    'imgs/pacifik-07.webp',
+                    'imgs/pacifik-08.webp',
+                    'imgs/pacifik-09.webp',
+                    'imgs/pacifik-10.webp',
+                    'imgs/pacifik-11.webp'
                 ],
                 liquik: [
                     {
+                        alt: 'YAP Liquik',
                         type: 'video',
                         src: 'videos/yap-liquik.mp4',
                         poster: 'https://res.cloudinary.com/hqfhmq40/video/upload/f_jpg,q_auto,w_800/v1783646076/yap-liquik-video_l0y5b3.jpg'
                     },
-                    'imgs/liquik-02.png',
-                    'imgs/liquik-03.png',
-                    'imgs/liquik-04.png',
-                    'imgs/liquik-05.png',
-                    'imgs/liquik-06.png',
-                    'imgs/liquik-07.png',
-                    'imgs/liquik-08.png',
-                    'imgs/liquik-09.png',
-                    'imgs/liquik-10.png',
-                    'imgs/liquik-11.png',
-                    'imgs/liquik-12.png',
-                    'imgs/liquik-13.png',
-                    'imgs/liquik-14.png',
-                    'imgs/liquik-15.png',
-                    'imgs/liquik-16.png',
-                    'imgs/liquik-17.png',
-                    'imgs/liquik-18.png',
-                    'imgs/liquik-19.png',
-                    'imgs/liquik-20.png',
-                    'imgs/liquik-21.png'
+                    'imgs/liquik-02.webp',
+                    'imgs/liquik-03.webp',
+                    'imgs/liquik-04.webp',
+                    'imgs/liquik-05.webp',
+                    'imgs/liquik-06.webp',
+                    'imgs/liquik-07.webp',
+                    'imgs/liquik-08.webp',
+                    'imgs/liquik-09.webp',
+                    'imgs/liquik-10.webp',
+                    'imgs/liquik-11.webp',
+                    'imgs/liquik-12.webp',
+                    'imgs/liquik-13.webp',
+                    'imgs/liquik-14.webp',
+                    'imgs/liquik-15.webp',
+                    'imgs/liquik-16.webp',
+                    'imgs/liquik-17.webp',
+                    'imgs/liquik-18.webp',
+                    'imgs/liquik-19.webp',
+                    'imgs/liquik-20.webp',
+                    'imgs/liquik-21.webp'
                 ]
             };
 
@@ -856,7 +861,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const thumb = document.createElement('img');
                 thumb.dataset.src = typeof slide === 'string' ? slide : slide.poster;
                 thumb.className = 'popup-thumbnail-item';
-                thumb.alt = slide.type === 'video' ? 'Video YAP Animal' : `Imagen ${idx + 1}`;
+                thumb.alt = slide.type === 'video' ? `Video ${slide.alt}` : `Imagen ${idx + 1}`;
                 thumb.loading = 'lazy';
                 thumb.decoding = 'async';
                 thumb.addEventListener('click', () => {
