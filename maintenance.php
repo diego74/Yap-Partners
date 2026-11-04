@@ -46,7 +46,7 @@ function maintenance_response(string $message, bool $api): void
     .hero { min-height: calc(100vh - 112px); display: grid; align-items: center; position: relative; overflow: hidden; background: var(--navy); color: #fff; }
     .hero::before { content: ""; position: absolute; width: min(72vw, 840px); aspect-ratio: 1; border: 1px solid rgba(201, 167, 76, .16); border-radius: 50%; right: -17%; top: -42%; box-shadow: 0 0 0 90px rgba(255,255,255,.025), 0 0 0 180px rgba(255,255,255,.018); pointer-events: none; }
     .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 5px; background: linear-gradient(90deg, var(--gold), #e7d9ad 45%, var(--gold)); }
-    .hero-inner { width: 100%; max-width: 1170px; margin: auto; padding: 110px 28px 130px; position: relative; z-index: 1; }
+    .hero-inner { width: 100%; max-width: 1170px; margin: auto; padding: 70px 28px 90px; position: relative; z-index: 1; }
     .eyebrow { display: flex; align-items: center; gap: 16px; color: #e1c678; font-size: 12px; font-weight: 800; letter-spacing: .23em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 42px; height: 2px; background: var(--gold); }
     h1 { max-width: 900px; margin: 32px 0 24px; font-size: clamp(45px, 7.5vw, 94px); font-weight: 600; letter-spacing: -.055em; line-height: 1.06; }
