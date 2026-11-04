@@ -1,0 +1,8 @@
+# Estas variables no son credenciales. LiteSpeed las entrega a PHP como entorno.
+SetEnv FIREBASE_PROJECT_ID projects-8642b
+SetEnv SITE_ID yap
+
+Options -Indexes
+RewriteEngine On
+RewriteRule ^maintenance\.php$ - [L]
+RewriteRule ^.*$ maintenance.php [L,QSA]

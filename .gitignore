@@ -4,3 +4,5 @@
 .agents/
 .well-known/
 nc_assets/
+dist/
+.local-tools/
